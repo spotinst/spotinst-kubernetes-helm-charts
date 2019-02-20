@@ -1,0 +1,4 @@
+dependencies:
+- name: metrics-server
+  version: 2.5.0
+  repository: https://kubernetes-charts.storage.googleapis.com
