@@ -1,0 +1,31 @@
+apiVersion: v1
+entries:
+  spotinst-kubernetes-cluster-controller:
+  - apiVersion: v1
+    appVersion: 1.0.34
+    created: 2019-03-24T17:08:18.984609+02:00
+    description: A Helm chart for Spotinst Kubernetes cluster controller
+    digest: 7caebe3d0cc04a49a1e7147ab80e3dc8a3074c0c892fcebf475b4351b28d1c9a
+    name: spotinst-kubernetes-cluster-controller
+    urls:
+    - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.34.tgz
+    version: 1.0.34
+  - apiVersion: v1
+    appVersion: 1.0.32
+    created: 2019-03-24T17:08:18.983213+02:00
+    description: A Helm chart for Spotinst Kubernetes cluster controller
+    digest: 9bd1dd1960657247e4cb9ce093a8f5f2a6ef53602210d635db81edad1cf6f81d
+    name: spotinst-kubernetes-cluster-controller
+    urls:
+    - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.32.tgz
+    version: 1.0.32
+  - apiVersion: v1
+    appVersion: 1.0.30
+    created: 2019-03-24T17:08:18.982455+02:00
+    description: A Helm chart for Spotinst Kubernetes cluster controller
+    digest: 091434ef50519432cb2f8c0bcab61bc29f31f3e390a5a43d1d43a7a18ea75f75
+    name: spotinst-kubernetes-cluster-controller
+    urls:
+    - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.30.tgz
+    version: 1.0.30
+generated: 2019-03-24T17:08:18.981058+02:00

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: kube-system
+data:
+  spotinst.token: {{ required "spotinst.token is missing" .Values.spotinst.token }}
+  spotinst.account: {{ required "spotinst.account is missing" .Values.spotinst.account }}
+  spotinst.cluster-identifier: {{ required "spotinst.clusterIdentifier is missing" .Values.spotinst.clusterIdentifier }}

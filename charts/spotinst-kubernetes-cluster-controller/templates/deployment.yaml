@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    k8s-app: {{ .Chart.Name }}
+  name: {{ .Chart.Name }}
+  namespace: kube-system
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      k8s-app: {{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        k8s-app: {{ .Chart.Name }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "spotinst/kubernetes-cluster-controller:{{ .Chart.AppVersion }}"
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: {{ .Chart.Name }}
+          mountPath: /certs
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 4401
+          initialDelaySeconds: 300
+          periodSeconds: 30
+        env:
+        - name: SPOTINST_TOKEN
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Chart.Name }}
+              key: spotinst.token
+        - name: SPOTINST_ACCOUNT
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Chart.Name }}
+              key: spotinst.account
+        - name: CLUSTER_IDENTIFIER
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Chart.Name }}
+              key: spotinst.cluster-identifier
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      - name: {{ .Chart.Name }}
+        secret:
+          secretName: {{ .Chart.Name }}
+      serviceAccountName: {{ .Chart.Name }}
+      tolerations:
+      - operator: Exists
