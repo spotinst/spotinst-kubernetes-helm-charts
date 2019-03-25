@@ -8,6 +8,7 @@ spotinst:
 
 # Metrics Server configuration.
 metrics-server:
+  deployChart: true
   args:
   - --logtostderr
   # enable this if you have self-signed certificates, see: https://github.com/kubernetes-incubator/metrics-server
