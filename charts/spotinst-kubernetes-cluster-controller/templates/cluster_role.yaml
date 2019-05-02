@@ -5,7 +5,7 @@ metadata:
   namespace: kube-system
 rules:
 - apiGroups: [""]
-  resources: ["pods", "nodes", "replicationcontrollers", "events", "limitranges", "services", "persistentvolumes", "persistentvolumeclaims"]
+  resources: ["pods", "nodes", "replicationcontrollers", "events", "limitranges", "services", "persistentvolumes", "persistentvolumeclaims", "namespaces"]
   verbs: ["get", "delete", "list", "patch", "update"]
 - apiGroups: ["apps"]
   resources: ["deployments"]
