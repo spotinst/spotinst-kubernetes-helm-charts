@@ -2,8 +2,27 @@ apiVersion: v1
 entries:
   spotinst-kubernetes-cluster-controller:
   - apiVersion: v1
+    appVersion: 1.0.39
+    created: "2019-05-28T16:21:21.8731+03:00"
+    dependencies:
+    - condition: metrics-server.deployChart
+      name: metrics-server
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 2.5.0
+    description: A Helm chart for Spotinst Kubernetes cluster controller
+    digest: 726b934596e3e0a88acd156387727656355c3f034af60618c02f67a8610fde21
+    name: spotinst-kubernetes-cluster-controller
+    urls:
+    - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.40.tgz
+    version: 1.0.40
+  - apiVersion: v1
     appVersion: 1.0.38
-    created: "2019-05-23T18:41:51.712582+03:00"
+    created: "2019-05-28T16:21:21.872508+03:00"
+    dependencies:
+    - condition: metrics-server.deployChart
+      name: metrics-server
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 2.5.0
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 835adbfdf5a8861fec3edf33a8a8fd082214446ac6ca92939fee5474e0d3c452
     name: spotinst-kubernetes-cluster-controller
@@ -12,7 +31,12 @@ entries:
     version: 1.0.39
   - apiVersion: v1
     appVersion: 1.0.37
-    created: "2019-05-23T18:41:51.712109+03:00"
+    created: "2019-05-28T16:21:21.871112+03:00"
+    dependencies:
+    - condition: metrics-server.deployChart
+      name: metrics-server
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 2.5.0
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 71c03f8e94025b1d50327987ee372da05ab5bbdfb01685bfd18becbd75d4af49
     name: spotinst-kubernetes-cluster-controller
@@ -21,7 +45,12 @@ entries:
     version: 1.0.38
   - apiVersion: v1
     appVersion: 1.0.35
-    created: "2019-05-23T18:41:51.71168+03:00"
+    created: "2019-05-28T16:21:21.870339+03:00"
+    dependencies:
+    - condition: metrics-server.deployChart
+      name: metrics-server
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 2.5.0
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 92d1396738862179497b8967073e3eff934ec701cbcd90441b6ffb4e1407cc20
     name: spotinst-kubernetes-cluster-controller
@@ -30,7 +59,12 @@ entries:
     version: 1.0.37
   - apiVersion: v1
     appVersion: 1.0.35
-    created: "2019-05-23T18:41:51.710853+03:00"
+    created: "2019-05-28T16:21:21.869724+03:00"
+    dependencies:
+    - condition: metrics-server.deployChart
+      name: metrics-server
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 2.5.0
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 773722a528b66b7e6ac59f29f7260b6194f92ff15726e9c4f987513cfd6b7e4c
     name: spotinst-kubernetes-cluster-controller
@@ -39,7 +73,12 @@ entries:
     version: 1.0.36
   - apiVersion: v1
     appVersion: 1.0.34
-    created: "2019-05-23T18:41:51.709958+03:00"
+    created: "2019-05-28T16:21:21.869031+03:00"
+    dependencies:
+    - condition: metrics-server.deployChart
+      name: metrics-server
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 2.5.0
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 7cce60463fbddf8df9729a3fb00fec6e48622f072605ae0038ec7a0bc69ebf8e
     name: spotinst-kubernetes-cluster-controller
@@ -48,7 +87,11 @@ entries:
     version: 1.0.35
   - apiVersion: v1
     appVersion: 1.0.34
-    created: "2019-05-23T18:41:51.70853+03:00"
+    created: "2019-05-28T16:21:21.86841+03:00"
+    dependencies:
+    - name: metrics-server
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 2.5.0
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 7caebe3d0cc04a49a1e7147ab80e3dc8a3074c0c892fcebf475b4351b28d1c9a
     name: spotinst-kubernetes-cluster-controller
@@ -57,7 +100,11 @@ entries:
     version: 1.0.34
   - apiVersion: v1
     appVersion: 1.0.32
-    created: "2019-05-23T18:41:51.707+03:00"
+    created: "2019-05-28T16:21:21.867803+03:00"
+    dependencies:
+    - name: metrics-server
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 2.5.0
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 9bd1dd1960657247e4cb9ce093a8f5f2a6ef53602210d635db81edad1cf6f81d
     name: spotinst-kubernetes-cluster-controller
@@ -66,11 +113,11 @@ entries:
     version: 1.0.32
   - apiVersion: v1
     appVersion: 1.0.30
-    created: "2019-05-23T18:41:51.706205+03:00"
+    created: "2019-05-28T16:21:21.866963+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 091434ef50519432cb2f8c0bcab61bc29f31f3e390a5a43d1d43a7a18ea75f75
     name: spotinst-kubernetes-cluster-controller
     urls:
     - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.30.tgz
     version: 1.0.30
-generated: "2019-05-23T18:41:51.705602+03:00"
+generated: "2019-05-28T16:21:21.866621+03:00"

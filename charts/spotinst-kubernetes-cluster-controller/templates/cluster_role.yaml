@@ -15,7 +15,7 @@ rules:
   verbs: ["get","list"]
 - apiGroups: ["rbac.authorization.k8s.io"]
   resources: ["clusterroles"]
-  verbs: ["patch", "update"]
+  verbs: ["patch", "update", "escalate"]
 - apiGroups: ["policy"]
   resources: ["poddisruptionbudgets"]
   verbs: ["list"]
