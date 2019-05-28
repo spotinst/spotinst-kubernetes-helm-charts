@@ -2,11 +2,9 @@
 
 function helm_package {
 	chart=$1
-	version=$(cat $chart/Chart.yaml | grep appVersion | awk -F':' '{print $2}')
 
 	helm package \
 		--debug \
-		--app-version $version \
 		--destination ./archives \
 		$chart
 }
