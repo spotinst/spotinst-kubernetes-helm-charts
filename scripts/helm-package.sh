@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function helm_package {
+function helm_package() {
 	chart=$1
 
 	helm package \
@@ -9,7 +9,7 @@ function helm_package {
 		$chart
 }
 
-function main {
+function main() {
 	export -f helm_package
 
 	find ./charts/ \

@@ -3,7 +3,7 @@
 # Base URL of our Helm repository
 HELM_REPO_BASE_URL=https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives
 
-function helm_index {
+function helm_index() {
 	helm repo index \
 		--debug \
 		--url $HELM_REPO_BASE_URL \
@@ -12,7 +12,7 @@ function helm_index {
 	mv ./archives/index.yaml .
 }
 
-function main {
+function main() {
 	helm_index
 }
 
