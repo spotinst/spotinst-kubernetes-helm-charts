@@ -16,6 +16,15 @@ spec:
       labels:
         k8s-app: {{ .Chart.Name }}
     spec:
+      priorityClassName: system-cluster-critical
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: node-role.kubernetes.io/master
+                operator: Exists
       containers:
       - name: {{ .Chart.Name }}
         image: "spotinst/kubernetes-cluster-controller:{{ .Chart.AppVersion }}"
@@ -28,7 +37,10 @@ spec:
             path: /healthcheck
             port: 4401
           initialDelaySeconds: 300
-          periodSeconds: 30
+          periodSeconds: 20
+          timeoutSeconds: 2
+          successThreshold: 1
+          failureThreshold: 3
         env:
         - name: SPOTINST_TOKEN
           valueFrom:
@@ -53,4 +65,13 @@ spec:
           secretName: {{ .Chart.Name }}
       serviceAccountName: {{ .Chart.Name }}
       tolerations:
-      - operator: Exists
+      - key: node.kubernetes.io/not-ready
+        effect: NoExecute
+        operator: Exists
+        tolerationSeconds: 150
+      - key: node.kubernetes.io/unreachable
+        effect: NoExecute
+        operator: Exists
+        tolerationSeconds: 150
+      - key: node-role.kubernetes.io/master
+        operator: Exists
