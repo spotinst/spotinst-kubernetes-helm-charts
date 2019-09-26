@@ -57,6 +57,12 @@ spec:
             configMapKeyRef:
               name: {{ .Chart.Name }}
               key: spotinst.cluster-identifier
+        - name: PROXY_URL
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Chart.Name }}
+              key: proxy-url
+              optional: true
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
       volumes:
