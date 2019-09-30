@@ -63,6 +63,12 @@ spec:
               name: {{ .Chart.Name }}
               key: proxy-url
               optional: true
+        - name: DISABLE_AUTO_UPDATE
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Chart.Name }}
+              key: spotinst.disable-auto-update
+              optional: true
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
       volumes:

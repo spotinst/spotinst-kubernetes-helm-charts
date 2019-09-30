@@ -5,6 +5,7 @@ spotinst:
   token: ""
   account: ""
   clusterIdentifier: ""
+  disableAutoUpdate: "false"
 
 # Metrics Server configuration.
 metrics-server:

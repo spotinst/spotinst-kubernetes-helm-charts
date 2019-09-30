@@ -7,3 +7,4 @@ data:
   spotinst.token: {{ required "spotinst.token is missing" .Values.spotinst.token }}
   spotinst.account: {{ required "spotinst.account is missing" .Values.spotinst.account }}
   spotinst.cluster-identifier: {{ required "spotinst.clusterIdentifier is missing" .Values.spotinst.clusterIdentifier }}
+  spotinst.disable-auto-update: {{ default "" .Values.spotinst.disableAutoUpdate | quote }}
