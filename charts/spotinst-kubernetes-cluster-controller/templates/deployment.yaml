@@ -63,6 +63,18 @@ spec:
               name: {{ .Chart.Name }}
               key: proxy-url
               optional: true
+        - name: POD_ID
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.uid
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
       volumes:
