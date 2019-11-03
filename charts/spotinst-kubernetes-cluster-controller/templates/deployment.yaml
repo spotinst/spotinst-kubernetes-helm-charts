@@ -46,22 +46,28 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: {{ .Chart.Name }}
-              key: spotinst.token
+              key: token
         - name: SPOTINST_ACCOUNT
           valueFrom:
             configMapKeyRef:
               name: {{ .Chart.Name }}
-              key: spotinst.account
+              key: account
         - name: CLUSTER_IDENTIFIER
           valueFrom:
             configMapKeyRef:
               name: {{ .Chart.Name }}
-              key: spotinst.cluster-identifier
+              key: cluster-identifier
         - name: PROXY_URL
           valueFrom:
             configMapKeyRef:
               name: {{ .Chart.Name }}
               key: proxy-url
+              optional: true
+        - name: DISABLE_AUTO_UPDATE
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Chart.Name }}
+              key: disable-auto-update
               optional: true
         - name: POD_ID
           valueFrom:

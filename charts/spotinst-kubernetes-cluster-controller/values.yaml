@@ -1,11 +1,16 @@
 # Default values for spotinst-kubernetes-cluster-controller.
 
-# Spotinst credentials.
+# Spotinst configuration.
 spotinst:
+  # Account credentials, see: https://api.spotinst.com/spotinst-api/administration/create-an-api-token.
   token: ""
   account: ""
-  clusterIdentifier: ""
 
+  # Controller configuration.
+  clusterIdentifier: ""
+  proxyUrl: ""
+  disableAutoUpdate: false
+  
 # Metrics Server configuration.
 metrics-server:
   deployChart: true
