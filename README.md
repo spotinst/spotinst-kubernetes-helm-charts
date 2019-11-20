@@ -2,7 +2,7 @@
 
 The official repository for all Spotinst Kubernetes Helm Charts.
 
-## Installing
+## Installation
 
 1. Grant Tiller access to create resources in `kube-system` namespace (see: [Tiller and Role-based Access Control](https://docs.helm.sh/using_helm/#tiller-and-role-based-access-control)):
 ```sh
@@ -42,4 +42,20 @@ $ helm install spotinst/spotinst-kubernetes-cluster-controller \
 
 ## Documentation
 
-For a comprehensive documentation, check out the [API documentation](http://api.spotinst.com/).
+If you're new to Spotinst and want to get started, please checkout our [Getting Started](https://api.spotinst.com/getting-started-with-spotinst/) guide, available on the [Spotinst Documentation](https://api.spotinst.com/) website.
+
+## Getting Help
+
+We use GitHub issues for tracking bugs and feature requests. Please use these community resources for getting help:
+
+* Ask a question on [Stack Overflow](https://stackoverflow.com/) and tag it with [spotinst-kubernetes-helm-charts](https://stackoverflow.com/questions/tagged/spotinst-kubernetes-helm-charts/).
+* Join our Spotinst community on [Slack](http://slack.spotinst.com/).
+* Open an [issue](https://github.com/spotinst/spotinst-kubernetes-helm-charts/issues/new/choose/).
+
+## Community
+
+* [Slack](http://slack.spotinst.com/)
+* [Twitter](https://twitter.com/spotinst/)
+
+## License
+Code is licensed under the [Apache License 2.0](https://github.com/spotinst/spotinst-kubernetes-helm-charts/blob/master/LICENSE/).
