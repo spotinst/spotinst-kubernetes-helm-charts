@@ -2,11 +2,11 @@
 
 # Spotinst configuration.
 spotinst:
-  # Account credentials, see: https://api.spotinst.com/spotinst-api/administration/create-an-api-token.
+  # Credentials, see: https://api.spotinst.com/spotinst-api/administration/create-an-api-token.
   token: ""
   account: ""
 
-  # Controller configuration.
+  # Configuration.
   clusterIdentifier: ""
   proxyUrl: ""
   disableAutoUpdate: false
