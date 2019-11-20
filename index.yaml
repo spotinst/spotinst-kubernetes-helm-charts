@@ -2,8 +2,22 @@ apiVersion: v1
 entries:
   spotinst-kubernetes-cluster-controller:
   - apiVersion: v1
+    appVersion: 1.0.48
+    created: "2019-11-20T18:03:46.352605+02:00"
+    dependencies:
+    - condition: metrics-server.deployChart
+      name: metrics-server
+      repository: https://kubernetes-charts.storage.googleapis.com
+      version: 2.5.0
+    description: A Helm chart for Spotinst Kubernetes cluster controller
+    digest: d890b77ef559169b2954de26a0b12007e1061dbdc8cd9c4ae275ebaac848bdf7
+    name: spotinst-kubernetes-cluster-controller
+    urls:
+    - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.49.tgz
+    version: 1.0.49
+  - apiVersion: v1
     appVersion: 1.0.47
-    created: "2019-11-03T14:02:00.109098+02:00"
+    created: "2019-11-20T18:03:46.351124+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -17,7 +31,7 @@ entries:
     version: 1.0.48
   - apiVersion: v1
     appVersion: 1.0.47
-    created: "2019-11-03T14:02:00.10844+02:00"
+    created: "2019-11-20T18:03:46.349887+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -31,7 +45,7 @@ entries:
     version: 1.0.47
   - apiVersion: v1
     appVersion: 1.0.46
-    created: "2019-11-03T14:02:00.107369+02:00"
+    created: "2019-11-20T18:03:46.347051+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -45,7 +59,7 @@ entries:
     version: 1.0.46
   - apiVersion: v1
     appVersion: 1.0.45
-    created: "2019-11-03T14:02:00.106134+02:00"
+    created: "2019-11-20T18:03:46.345692+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -59,7 +73,7 @@ entries:
     version: 1.0.45
   - apiVersion: v1
     appVersion: 1.0.44
-    created: "2019-11-03T14:02:00.104332+02:00"
+    created: "2019-11-20T18:03:46.34366+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -73,7 +87,7 @@ entries:
     version: 1.0.44
   - apiVersion: v1
     appVersion: 1.0.43
-    created: "2019-11-03T14:02:00.103112+02:00"
+    created: "2019-11-20T18:03:46.342522+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -87,7 +101,7 @@ entries:
     version: 1.0.43
   - apiVersion: v1
     appVersion: 1.0.42
-    created: "2019-11-03T14:02:00.101358+02:00"
+    created: "2019-11-20T18:03:46.341511+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -101,7 +115,7 @@ entries:
     version: 1.0.42
   - apiVersion: v1
     appVersion: 1.0.40
-    created: "2019-11-03T14:02:00.099462+02:00"
+    created: "2019-11-20T18:03:46.340388+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -115,7 +129,7 @@ entries:
     version: 1.0.41
   - apiVersion: v1
     appVersion: 1.0.39
-    created: "2019-11-03T14:02:00.097866+02:00"
+    created: "2019-11-20T18:03:46.337239+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -129,7 +143,7 @@ entries:
     version: 1.0.40
   - apiVersion: v1
     appVersion: 1.0.38
-    created: "2019-11-03T14:02:00.096587+02:00"
+    created: "2019-11-20T18:03:46.335823+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -143,7 +157,7 @@ entries:
     version: 1.0.39
   - apiVersion: v1
     appVersion: 1.0.37
-    created: "2019-11-03T14:02:00.095388+02:00"
+    created: "2019-11-20T18:03:46.334275+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -157,7 +171,7 @@ entries:
     version: 1.0.38
   - apiVersion: v1
     appVersion: 1.0.35
-    created: "2019-11-03T14:02:00.093307+02:00"
+    created: "2019-11-20T18:03:46.330079+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -171,7 +185,7 @@ entries:
     version: 1.0.37
   - apiVersion: v1
     appVersion: 1.0.35
-    created: "2019-11-03T14:02:00.091935+02:00"
+    created: "2019-11-20T18:03:46.322456+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -185,7 +199,7 @@ entries:
     version: 1.0.36
   - apiVersion: v1
     appVersion: 1.0.34
-    created: "2019-11-03T14:02:00.089258+02:00"
+    created: "2019-11-20T18:03:46.32103+02:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -199,7 +213,7 @@ entries:
     version: 1.0.35
   - apiVersion: v1
     appVersion: 1.0.34
-    created: "2019-11-03T14:02:00.086932+02:00"
+    created: "2019-11-20T18:03:46.319962+02:00"
     dependencies:
     - name: metrics-server
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -212,7 +226,7 @@ entries:
     version: 1.0.34
   - apiVersion: v1
     appVersion: 1.0.32
-    created: "2019-11-03T14:02:00.085893+02:00"
+    created: "2019-11-20T18:03:46.318623+02:00"
     dependencies:
     - name: metrics-server
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -225,11 +239,11 @@ entries:
     version: 1.0.32
   - apiVersion: v1
     appVersion: 1.0.30
-    created: "2019-11-03T14:02:00.082709+02:00"
+    created: "2019-11-20T18:03:46.317002+02:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 091434ef50519432cb2f8c0bcab61bc29f31f3e390a5a43d1d43a7a18ea75f75
     name: spotinst-kubernetes-cluster-controller
     urls:
     - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.30.tgz
     version: 1.0.30
-generated: "2019-11-03T14:02:00.080882+02:00"
+generated: "2019-11-20T18:03:46.313994+02:00"
