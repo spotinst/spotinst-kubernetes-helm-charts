@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 function helm_package() {
-	chart=$1
+	chart_dir="$1"
+	chart_name="$(basename "${chart_dir}")"
 
+	echo "==> Packaging chart: ${chart_name}"
 	helm package \
 		--debug \
 		--destination ./archives \
-		$chart
+		${chart_dir}
 }
 
 function main() {

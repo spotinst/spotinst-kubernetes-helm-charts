@@ -1,0 +1,12 @@
+# Test values for spotinst-kubernetes-cluster-controller.
+
+# Spotinst configuration.
+spotinst:
+  # Account credentials, see: https://api.spotinst.com/spotinst-api/administration/create-an-api-token.
+  token: "redacted"
+  account: "redacted"
+
+  # Controller configuration.
+  clusterIdentifier: "test"
+  proxyUrl: "test"
+  disableAutoUpdate: true

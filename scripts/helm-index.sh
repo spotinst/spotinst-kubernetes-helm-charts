@@ -4,9 +4,11 @@
 HELM_REPO_BASE_URL=https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives
 
 function helm_index() {
+	echo "==> Indexing repository..."
+
 	helm repo index \
 		--debug \
-		--url $HELM_REPO_BASE_URL \
+		--url "${HELM_REPO_BASE_URL}" \
 		./archives
 
 	mv ./archives/index.yaml .
