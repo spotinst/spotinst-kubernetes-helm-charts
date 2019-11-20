@@ -1,3 +1,5 @@
+HELM := helm
+
 ##@ Development
 
 .PHONY: release
@@ -5,12 +7,12 @@ release: test package index ## Execute both package and index
 
 .PHONY: index
 index: ## Generate an index file using helm
-	@sh -c "'$(CURDIR)/scripts/helm-index.sh'"
+	@sh -c "HELM=$(HELM) '$(CURDIR)/scripts/helm-index.sh'"
 
 .PHONY: package
 package: ## Package all charts into a versioned chart archive files
-	@sh -c "'$(CURDIR)/scripts/helm-package.sh'"
+	@sh -c "HELM=$(HELM) '$(CURDIR)/scripts/helm-package.sh'"
 
 .PHONY: test
 test: ## Test a chart by render templates locally
-	@sh -c "'$(CURDIR)/scripts/helm-test.sh'"
+	@sh -c "HELM=$(HELM) '$(CURDIR)/scripts/helm-test.sh'"

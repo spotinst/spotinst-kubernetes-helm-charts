@@ -5,7 +5,7 @@ function helm_package() {
 	chart_name="$(basename "${chart_dir}")"
 
 	echo "==> Packaging chart: ${chart_name}"
-	helm package \
+	${HELM} package \
 		--debug \
 		--destination ./archives \
 		${chart_dir}

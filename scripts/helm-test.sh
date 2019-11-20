@@ -7,19 +7,18 @@ function helm_test() {
 	chart_values_arg=""
 
 	if [[ -f "${chart_values_path}" ]]; then
-		echo "==> Setting test values: ${chart_values_path}"
+		echo "==> Using test values: ${chart_values_path}"
 		chart_values_arg="--values ${chart_values_path}"
 	fi
 
 	echo "==> Rendering chart: ${chart_name}"
-	helm template \
+	${HELM} template \
 		--debug \
-		--dry-run \
 		${chart_values_arg} \
 		${chart_dir}
 
 	echo "==> Linting chart: ${chart_name}"
-	helm lint \
+	${HELM} lint \
 		--debug \
 		${chart_values_arg} \
 		${chart_dir}
