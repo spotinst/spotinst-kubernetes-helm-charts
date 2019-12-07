@@ -57,6 +57,12 @@ spec:
             configMapKeyRef:
               name: {{ .Chart.Name }}
               key: cluster-identifier
+        - name: BASE_SPOTINST_URL
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Chart.Name }}
+              key: base-url
+              optional: true
         - name: PROXY_URL
           valueFrom:
             configMapKeyRef:

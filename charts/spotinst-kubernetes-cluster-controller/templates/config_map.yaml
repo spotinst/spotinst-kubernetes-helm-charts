@@ -11,4 +11,5 @@ data:
   # Configuration.
   cluster-identifier: {{ required "spotinst.clusterIdentifier is missing" .Values.spotinst.clusterIdentifier }}
   disable-auto-update: {{ default "false" .Values.spotinst.disableAutoUpdate | quote }}
+  base-url: {{ default "" .Values.spotinst.baseUrl | quote }}
   proxy-url: {{ default "" .Values.spotinst.proxyUrl | quote }}

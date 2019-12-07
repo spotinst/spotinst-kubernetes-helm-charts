@@ -8,5 +8,6 @@ spotinst:
 
   # Configuration.
   clusterIdentifier: "test"
+  baseUrl: "test"
   proxyUrl: "test"
   disableAutoUpdate: true
