@@ -4,8 +4,9 @@ metadata:
   name: {{ .Chart.Name }}
   namespace: kube-system
 rules:
-
-##### READ-ONLY : REQUIRED FOR FUNCTIONAL OPERATION #####
+  # ---------------------------------------------------------------------------
+  # Required for functional operation (read-only).
+  # ---------------------------------------------------------------------------
 - apiGroups: [""]
   resources: ["pods", "nodes", "services", "namespaces", "replicationcontrollers", "limitranges", "events", "persistentvolumes", "persistentvolumeclaims"]
   verbs: ["get", "list"]
@@ -32,8 +33,9 @@ rules:
   verbs: ["get", "list"]
 - nonResourceURLs: ["/version/", "/version"]
   verbs: ["get"]
-
-##### NODE/PODS MANIPULATION : REQUIRED FOR DRAINING & FUNCTIONAL OPERATION #####
+  # ---------------------------------------------------------------------------
+  # Required by the draining feature and for functional operation.
+  # ---------------------------------------------------------------------------
 - apiGroups: [""]
   resources: ["nodes"]
   verbs: ["patch", "update"]
@@ -43,8 +45,9 @@ rules:
 - apiGroups: [""]
   resources: ["pods/eviction"]
   verbs: ["create"]
-
-##### CONTROLLER RESOURCE MANIPULATION : REQUIRED FOR AUTO-UPDATE FEATURE #####
+  # ---------------------------------------------------------------------------
+  # Required by the Spotinst Auto Update feature.
+  # ---------------------------------------------------------------------------
 - apiGroups: ["rbac.authorization.k8s.io"]
   resources: ["clusterroles"]
   resourceNames: ["spotinst-kubernetes-cluster-controller"]
@@ -53,8 +56,9 @@ rules:
   resources: ["deployments"]
   resourceNames: ["spotinst-kubernetes-cluster-controller"]
   verbs: ["patch","update"]
-
-##### FULL CRUD: REQUIRED FOR SPOTINST-APPLY FEATURE #####
+  # ---------------------------------------------------------------------------
+  # Required by the Spotinst Apply feature.
+  # ---------------------------------------------------------------------------
 - apiGroups: ["apps"]
   resources: ["deployments", "daemonsets"]
   verbs: ["get", "list", "patch","update","create","delete"]

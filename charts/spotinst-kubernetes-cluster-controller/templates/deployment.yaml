@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    k8s-app: {{ .Chart.Name }}
+    k8s-addon: {{ .Chart.Name }}
   name: {{ .Chart.Name }}
   namespace: kube-system
 spec:
@@ -10,11 +10,11 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      k8s-app: {{ .Chart.Name }}
+      k8s-addon: {{ .Chart.Name }}
   template:
     metadata:
       labels:
-        k8s-app: {{ .Chart.Name }}
+        k8s-addon: {{ .Chart.Name }}
     spec:
       priorityClassName: system-cluster-critical
       affinity:
@@ -27,11 +27,8 @@ spec:
                 operator: Exists
       containers:
       - name: {{ .Chart.Name }}
-        image: "spotinst/kubernetes-cluster-controller:{{ .Chart.AppVersion }}"
+        image: spotinst/kubernetes-cluster-controller:{{ .Chart.AppVersion }}
         imagePullPolicy: Always
-        volumeMounts:
-        - name: {{ .Chart.Name }}
-          mountPath: /certs
         livenessProbe:
           httpGet:
             path: /healthcheck
@@ -45,34 +42,34 @@ spec:
         - name: SPOTINST_TOKEN
           valueFrom:
             configMapKeyRef:
-              name: {{ .Chart.Name }}
-              key: token
+              name: {{ .Chart.Name }}-config
+              key: spotinst.token
         - name: SPOTINST_ACCOUNT
           valueFrom:
             configMapKeyRef:
-              name: {{ .Chart.Name }}
-              key: account
+              name: {{ .Chart.Name }}-config
+              key: spotinst.account
         - name: CLUSTER_IDENTIFIER
           valueFrom:
             configMapKeyRef:
-              name: {{ .Chart.Name }}
-              key: cluster-identifier
+              name: {{ .Chart.Name }}-config
+              key: spotinst.cluster-identifier
         - name: BASE_SPOTINST_URL
           valueFrom:
             configMapKeyRef:
-              name: {{ .Chart.Name }}
+              name: {{ .Chart.Name }}-config
               key: base-url
               optional: true
         - name: PROXY_URL
           valueFrom:
             configMapKeyRef:
-              name: {{ .Chart.Name }}
+              name: {{ .Chart.Name }}-config
               key: proxy-url
               optional: true
         - name: DISABLE_AUTO_UPDATE
           valueFrom:
             configMapKeyRef:
-              name: {{ .Chart.Name }}
+              name: {{ .Chart.Name }}-config
               key: disable-auto-update
               optional: true
         - name: POD_ID
@@ -89,10 +86,6 @@ spec:
               fieldPath: metadata.namespace
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
-      volumes:
-      - name: {{ .Chart.Name }}
-        secret:
-          secretName: {{ .Chart.Name }}
       serviceAccountName: {{ .Chart.Name }}
       tolerations:
       - key: node.kubernetes.io/not-ready

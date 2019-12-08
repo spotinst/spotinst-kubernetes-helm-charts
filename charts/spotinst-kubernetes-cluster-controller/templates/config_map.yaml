@@ -1,15 +1,20 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Chart.Name }}-config
   namespace: kube-system
 data:
+  # ---------------------------------------------------------------------------
   # Credentials.
-  token: {{ required "spotinst.token is missing" .Values.spotinst.token }}
-  account: {{ required "spotinst.account is missing" .Values.spotinst.account }}
-  
+  #
+  # TODO(liran): Remove the `spotinst.` prefix.
+  # ---------------------------------------------------------------------------
+  spotinst.token: {{ required "spotinst.token is missing" .Values.spotinst.token }}
+  spotinst.account: {{ required "spotinst.account is missing" .Values.spotinst.account }}
+  # ---------------------------------------------------------------------------
   # Configuration.
-  cluster-identifier: {{ required "spotinst.clusterIdentifier is missing" .Values.spotinst.clusterIdentifier }}
+  # ---------------------------------------------------------------------------
+  spotinst.cluster-identifier: {{ required "spotinst.clusterIdentifier is missing" .Values.spotinst.clusterIdentifier }}
   disable-auto-update: {{ default "false" .Values.spotinst.disableAutoUpdate | quote }}
   base-url: {{ default "" .Values.spotinst.baseUrl | quote }}
   proxy-url: {{ default "" .Values.spotinst.proxyUrl | quote }}
