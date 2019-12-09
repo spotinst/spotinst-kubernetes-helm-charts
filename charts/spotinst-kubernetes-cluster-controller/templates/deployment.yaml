@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    k8s-addon: {{ .Chart.Name }}
+    k8s-app: {{ .Chart.Name }}
   name: {{ .Chart.Name }}
   namespace: kube-system
 spec:
@@ -10,11 +10,11 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      k8s-addon: {{ .Chart.Name }}
+      k8s-app: {{ .Chart.Name }}
   template:
     metadata:
       labels:
-        k8s-addon: {{ .Chart.Name }}
+        k8s-app: {{ .Chart.Name }}
     spec:
       priorityClassName: system-cluster-critical
       affinity:
