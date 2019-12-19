@@ -1,0 +1,9 @@
+{{- if ne .Values.namespace "kube-system" }}
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: spotinst-cluster-critical
+  namespace: {{ required "namespace is missing" .Values.namespace }}
+value: 1000000000
+description: "Used for critical pods that must run in the cluster, but can be moved to another node if necessary. Priority classes `system-cluster-critical` and `system-node-critical` are limited to `kube-system` namespace. See: https://github.com/kubernetes/kubernetes/issues/60596."
+{{- end }}

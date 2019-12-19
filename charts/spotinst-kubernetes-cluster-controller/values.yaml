@@ -1,5 +1,8 @@
 # Default values for spotinst-kubernetes-cluster-controller.
 
+# Default namespace.
+namespace: kube-system
+
 # Spotinst configuration.
 spotinst:
   # Credentials, see: https://api.spotinst.com/spotinst-api/administration/create-an-api-token.

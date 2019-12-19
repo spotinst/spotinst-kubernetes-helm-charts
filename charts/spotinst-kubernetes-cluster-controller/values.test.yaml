@@ -1,13 +1,16 @@
 # Test values for spotinst-kubernetes-cluster-controller.
 
+# Default namespace.
+namespace: test
+
 # Spotinst configuration.
 spotinst:
   # Credentials, see: https://api.spotinst.com/spotinst-api/administration/create-an-api-token.
-  token: "test"
-  account: "test"
+  token: test
+  account: test
 
   # Configuration.
-  clusterIdentifier: "test"
-  baseUrl: "test"
-  proxyUrl: "test"
+  clusterIdentifier: test
+  baseUrl: test
+  proxyUrl: test
   disableAutoUpdate: true

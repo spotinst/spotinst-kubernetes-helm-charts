@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Chart.Name }}-config
-  namespace: kube-system
+  namespace: {{ required "namespace is missing" .Values.namespace }}
 data:
   # ---------------------------------------------------------------------------
   # Credentials.
@@ -15,6 +15,10 @@ data:
   # Configuration.
   # ---------------------------------------------------------------------------
   spotinst.cluster-identifier: {{ required "spotinst.clusterIdentifier is missing" .Values.spotinst.clusterIdentifier }}
-  disable-auto-update: {{ default "false" .Values.spotinst.disableAutoUpdate | quote }}
   base-url: {{ default "" .Values.spotinst.baseUrl | quote }}
   proxy-url: {{ default "" .Values.spotinst.proxyUrl | quote }}
+  {{- if eq .Values.namespace "kube-system" }}
+  disable-auto-update: {{ default "false" .Values.spotinst.disableAutoUpdate | quote }}
+  {{- else }}
+  disable-auto-update: "true"
+  {{- end }}
