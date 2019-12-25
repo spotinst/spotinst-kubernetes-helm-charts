@@ -46,6 +46,12 @@ rules:
   resources: ["pods/eviction"]
   verbs: ["create"]
   # ---------------------------------------------------------------------------
+  # Required by the Spotinst CleanUp feature.
+  # ----------------------------------------------------------------------------
+- apiGroups: [""]
+  resources: ["nodes"]
+  verbs: ["delete"]
+  # ---------------------------------------------------------------------------
   # Required by the Spotinst Auto Update feature.
   # ---------------------------------------------------------------------------
 - apiGroups: ["rbac.authorization.k8s.io"]
