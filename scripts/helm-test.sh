@@ -25,6 +25,7 @@ function helm_test() {
 }
 
 function main() {
+	echo "==> Helm version: ${HELM_VERSION}"
 	export -f helm_test
 
 	find ./charts/ \

@@ -15,6 +15,7 @@ function helm_index() {
 }
 
 function main() {
+	echo "==> Helm version: ${HELM_VERSION}"
 	helm_index
 }
 

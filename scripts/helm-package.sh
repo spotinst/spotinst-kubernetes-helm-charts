@@ -12,6 +12,7 @@ function helm_package() {
 }
 
 function main() {
+	echo "==> Helm version: ${HELM_VERSION}"
 	export -f helm_package
 
 	find ./charts/ \
