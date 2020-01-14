@@ -22,3 +22,4 @@ data:
   {{- else }}
   disable-auto-update: "true"
   {{- end }}
+  enable-csr-approval: {{ default "false" .Values.spotinst.enableCsrApproval | quote }}

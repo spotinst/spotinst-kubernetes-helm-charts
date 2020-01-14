@@ -14,7 +14,8 @@ spotinst:
   baseUrl: ""
   proxyUrl: ""
   disableAutoUpdate: false
-  
+  enableCsrApproval: false
+
 # Metrics Server configuration.
 metrics-server:
   deployChart: true

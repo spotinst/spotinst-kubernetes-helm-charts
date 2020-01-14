@@ -14,3 +14,4 @@ spotinst:
   baseUrl: test
   proxyUrl: test
   disableAutoUpdate: true
+  enableCsrApproval: true

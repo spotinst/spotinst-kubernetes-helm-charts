@@ -51,6 +51,15 @@ rules:
 - apiGroups: [""]
   resources: ["nodes"]
   verbs: ["delete"]
+  # ----------------------------------------------------------------------------
+  # Required by the Spotinst CSR Approval feature.
+  # ----------------------------------------------------------------------------
+- apiGroups: ["certificates.k8s.io"]
+  resources: ["certificatesigningrequests"]
+  verbs: ["get", "list"]
+- apiGroups: ["certificates.k8s.io"]
+  resources: ["certificatesigningrequests/approval"]
+  verbs: ["patch", "update"]
   # ---------------------------------------------------------------------------
   # Required by the Spotinst Auto Update feature.
   # ---------------------------------------------------------------------------

@@ -76,6 +76,12 @@ spec:
               name: {{ .Chart.Name }}-config
               key: disable-auto-update
               optional: true
+        - name: ENABLE_CSR_APPROVAL
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Chart.Name }}-config
+              key: enable-csr-approval
+              optional: true
         - name: POD_ID
           valueFrom:
             fieldRef:
