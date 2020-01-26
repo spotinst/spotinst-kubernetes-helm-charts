@@ -29,6 +29,17 @@ spec:
               matchExpressions:
               - key: node-role.kubernetes.io/master
                 operator: Exists
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 50
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                  - key: k8s-app
+                    operator: In
+                    values:
+                    - {{ .Chart.Name }}
+                topologyKey: kubernetes.io/hostname
       containers:
       - name: {{ .Chart.Name }}
         image: spotinst/kubernetes-cluster-controller:{{ .Chart.AppVersion }}
