@@ -10,7 +10,7 @@ rules:
   resources: ["pods", "nodes", "services", "namespaces", "replicationcontrollers", "limitranges", "events", "persistentvolumes", "persistentvolumeclaims"]
   verbs: ["get", "list"]
 - apiGroups: ["apps"]
-  resources: ["deployments", "daemonsets", "statefulsets"]
+  resources: ["deployments", "daemonsets", "statefulsets", "replicasets"]
   verbs: ["get","list"]
 - apiGroups: ["storage.k8s.io"]
   resources: ["storageclasses"]
