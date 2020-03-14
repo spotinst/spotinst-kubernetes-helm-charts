@@ -39,3 +39,20 @@ resources: {}
 image:
   repository: spotinst/kubernetes-cluster-controller
   pullPolicy: Always
+
+dnsPolicy: ClusterFirst
+
+tolerations:
+- key: node.kubernetes.io/not-ready
+  effect: NoExecute
+  operator: Exists
+  tolerationSeconds: 150
+- key: node.kubernetes.io/unreachable
+  effect: NoExecute
+  operator: Exists
+  tolerationSeconds: 150
+- key: node-role.kubernetes.io/master
+  operator: Exists
+
+nodeAffinity:
+  matchKey: node-role.kubernetes.io/master

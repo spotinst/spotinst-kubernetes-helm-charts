@@ -27,7 +27,7 @@ spec:
           - weight: 100
             preference:
               matchExpressions:
-              - key: node-role.kubernetes.io/master
+              - key: {{ .Values.nodeAffinity.matchKey }}
                 operator: Exists
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -108,14 +108,6 @@ spec:
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
       serviceAccountName: {{ .Chart.Name }}
+      dnsPolicy: {{ .Values.dnsPolicy }}
       tolerations:
-      - key: node.kubernetes.io/not-ready
-        effect: NoExecute
-        operator: Exists
-        tolerationSeconds: 150
-      - key: node.kubernetes.io/unreachable
-        effect: NoExecute
-        operator: Exists
-        tolerationSeconds: 150
-      - key: node-role.kubernetes.io/master
-        operator: Exists
+{{ .Values.tolerations | toYaml | indent 6 }}
