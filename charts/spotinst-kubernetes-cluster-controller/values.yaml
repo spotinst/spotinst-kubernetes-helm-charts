@@ -34,3 +34,8 @@ resources: {}
   # requests:
   #  cpu: 100m
   #  memory: 128Mi
+
+# Image.
+image:
+  repository: spotinst/kubernetes-cluster-controller
+  pullPolicy: Always

@@ -42,8 +42,8 @@ spec:
                 topologyKey: kubernetes.io/hostname
       containers:
       - name: {{ .Chart.Name }}
-        image: spotinst/kubernetes-cluster-controller:{{ .Chart.AppVersion }}
-        imagePullPolicy: Always
+        image: {{ .Values.image.repository }}:{{ .Chart.AppVersion }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         livenessProbe:
           httpGet:
             path: /healthcheck

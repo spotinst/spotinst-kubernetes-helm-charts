@@ -15,3 +15,8 @@ spotinst:
   proxyUrl: test
   disableAutoUpdate: true
   enableCsrApproval: true
+
+# Image.
+image:
+  repository: spotinst/kubernetes-cluster-controller
+  pullPolicy: Always
