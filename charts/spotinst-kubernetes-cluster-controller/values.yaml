@@ -25,6 +25,7 @@ metrics-server:
   #  - --kubelet-insecure-tls
 
 # Resource requests and limits.
+# ref: http://kubernetes.io/docs/user-guide/compute-resources/
 resources: {}
   # If you do want to specify resources, uncomment the following lines,
   # adjust them as necessary, and remove the curly braces after 'resources:'.
@@ -36,12 +37,17 @@ resources: {}
   #  memory: 128Mi
 
 # Image.
+# ref: https://kubernetes.io/docs/concepts/containers/images/
 image:
   repository: spotinst/kubernetes-cluster-controller
   pullPolicy: Always
 
+# DNS policy.
+# ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
 dnsPolicy: ClusterFirst
 
+# Tolerations for nodes that have taints on them.
+# ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
 tolerations:
 - key: node.kubernetes.io/not-ready
   effect: NoExecute
@@ -54,5 +60,24 @@ tolerations:
 - key: node-role.kubernetes.io/master
   operator: Exists
 
-nodeAffinity:
-  matchKey: node-role.kubernetes.io/master
+# Pod scheduling preferences.
+# ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
+affinity:
+  nodeAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+    - weight: 100
+      preference:
+        matchExpressions:
+        - key: node-role.kubernetes.io/master
+          operator: Exists
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+    - weight: 50
+      podAffinityTerm:
+        labelSelector:
+          matchExpressions:
+          - key: k8s-app
+            operator: In
+            values:
+            - spotinst-kubernetes-cluster-controller
+        topologyKey: kubernetes.io/hostname
