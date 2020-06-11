@@ -46,6 +46,13 @@ image:
 # ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
 dnsPolicy: ClusterFirst
 
+# DNS config.
+# ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
+dnsConfig:
+  options:
+  - name: ndots
+    value: "1"
+
 # Tolerations for nodes that have taints on them.
 # ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
 tolerations:
