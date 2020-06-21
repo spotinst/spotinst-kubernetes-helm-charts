@@ -2,8 +2,17 @@ apiVersion: v1
 entries:
   spotinst-kubernetes-cluster-controller:
   - apiVersion: v1
+    appVersion: 1.0.60
+    created: "2020-06-21T10:10:37.941158+03:00"
+    description: A Helm chart for Spotinst Kubernetes cluster controller
+    digest: bf33009fd63ae653b5df76c7e00eaf9c6623e74fc0a30fb5de343d35027641e3
+    name: spotinst-kubernetes-cluster-controller
+    urls:
+    - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.69.tgz
+    version: 1.0.69
+  - apiVersion: v1
     appVersion: 1.0.59
-    created: "2020-06-11T18:19:40.527195+03:00"
+    created: "2020-06-21T10:10:37.940067+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 286db436aa884cd1e1025a52adc46454f4770b87d24a2a7c58027935ff9d7873
     name: spotinst-kubernetes-cluster-controller
@@ -12,7 +21,7 @@ entries:
     version: 1.0.68
   - apiVersion: v1
     appVersion: 1.0.59
-    created: "2020-06-11T18:19:40.526633+03:00"
+    created: "2020-06-21T10:10:37.937391+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 43507114f9306cb227c71e820b1c4aab9bc634c9af9d07e1dafedbd5b4682165
     name: spotinst-kubernetes-cluster-controller
@@ -21,7 +30,7 @@ entries:
     version: 1.0.67
   - apiVersion: v1
     appVersion: 1.0.58
-    created: "2020-06-11T18:19:40.525551+03:00"
+    created: "2020-06-21T10:10:37.935387+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: fd7f3cce07064a73f8b30d72f54a3be7fd989faafb4335c6f85348ba6c5497f8
     name: spotinst-kubernetes-cluster-controller
@@ -30,7 +39,7 @@ entries:
     version: 1.0.66
   - apiVersion: v1
     appVersion: 1.0.58
-    created: "2020-06-11T18:19:40.524549+03:00"
+    created: "2020-06-21T10:10:37.93382+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 706b3aa201eabaf7e99a32b47ff0ee804372bffcc0caa0cc938787871f78a6ef
     name: spotinst-kubernetes-cluster-controller
@@ -39,7 +48,7 @@ entries:
     version: 1.0.65
   - apiVersion: v1
     appVersion: 1.0.58
-    created: "2020-06-11T18:19:40.523528+03:00"
+    created: "2020-06-21T10:10:37.932704+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: bd0484d1fe74ac1d8762f47efac2b36af51c983e08fe954e81db179eb28a5e23
     name: spotinst-kubernetes-cluster-controller
@@ -48,7 +57,7 @@ entries:
     version: 1.0.64
   - apiVersion: v1
     appVersion: 1.0.57
-    created: "2020-06-11T18:19:40.522519+03:00"
+    created: "2020-06-21T10:10:37.931648+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 2f88a4bd5e800e98045f1d02c113bbe1ed44982a1b9d0d6af900b5ca381cf516
     name: spotinst-kubernetes-cluster-controller
@@ -57,7 +66,7 @@ entries:
     version: 1.0.63
   - apiVersion: v1
     appVersion: 1.0.56
-    created: "2020-06-11T18:19:40.521775+03:00"
+    created: "2020-06-21T10:10:37.930549+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: d11337fc05899633cfc406df370301cb33cc34a666bddbbc01bb5716c40125cc
     name: spotinst-kubernetes-cluster-controller
@@ -66,7 +75,7 @@ entries:
     version: 1.0.62
   - apiVersion: v1
     appVersion: 1.0.55
-    created: "2020-06-11T18:19:40.520563+03:00"
+    created: "2020-06-21T10:10:37.926404+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 37c0b01d1ed4dbf19de6bbd2a637dfe69480326156f43af9a7775223d4c9f64c
     name: spotinst-kubernetes-cluster-controller
@@ -75,7 +84,7 @@ entries:
     version: 1.0.61
   - apiVersion: v1
     appVersion: 1.0.54
-    created: "2020-06-11T18:19:40.519432+03:00"
+    created: "2020-06-21T10:10:37.924722+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 64342fcd5a49cefab6b3ecadcd2f5b6e5caa8e8e5b108e1f3c49f7a4f51a4684
     name: spotinst-kubernetes-cluster-controller
@@ -84,7 +93,7 @@ entries:
     version: 1.0.60
   - apiVersion: v1
     appVersion: 1.0.53
-    created: "2020-06-11T18:19:40.518447+03:00"
+    created: "2020-06-21T10:10:37.923685+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 63f0f28f92200e79129b8370132850c7e34fe6a229180b3afa0682606aec3355
     name: spotinst-kubernetes-cluster-controller
@@ -93,7 +102,7 @@ entries:
     version: 1.0.59
   - apiVersion: v1
     appVersion: 1.0.52
-    created: "2020-06-11T18:19:40.517406+03:00"
+    created: "2020-06-21T10:10:37.922379+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 1a42cab7202703d23d89a1220de7dd0b142c7ae79764832289afa573935438ca
     name: spotinst-kubernetes-cluster-controller
@@ -102,7 +111,7 @@ entries:
     version: 1.0.58
   - apiVersion: v1
     appVersion: 1.0.52
-    created: "2020-06-11T18:19:40.516398+03:00"
+    created: "2020-06-21T10:10:37.920957+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: ddf7f69d16c52bcdfac439d867d37acd81b1e0fb2c9f571458b547f04534235d
     name: spotinst-kubernetes-cluster-controller
@@ -111,7 +120,7 @@ entries:
     version: 1.0.57
   - apiVersion: v1
     appVersion: 1.0.51
-    created: "2020-06-11T18:19:40.515332+03:00"
+    created: "2020-06-21T10:10:37.919153+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 48d180916a7e7b14caed444337bf12df3c66cc88ddc03ccf8113238274d9a4d3
     name: spotinst-kubernetes-cluster-controller
@@ -120,7 +129,7 @@ entries:
     version: 1.0.56
   - apiVersion: v1
     appVersion: 1.0.51
-    created: "2020-06-11T18:19:40.514329+03:00"
+    created: "2020-06-21T10:10:37.91782+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 2eaefaa0216d4ead4979464918372a1ca38ae23d9dba5f39e53ff0c0ae99db83
     name: spotinst-kubernetes-cluster-controller
@@ -129,7 +138,7 @@ entries:
     version: 1.0.55
   - apiVersion: v1
     appVersion: 1.0.50
-    created: "2020-06-11T18:19:40.513618+03:00"
+    created: "2020-06-21T10:10:37.916537+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 89cf4e245e6cd632cc2cf03ccfd149691dba25f08f7c27cf4ebb83808e0e32ae
     name: spotinst-kubernetes-cluster-controller
@@ -138,7 +147,7 @@ entries:
     version: 1.0.54
   - apiVersion: v1
     appVersion: 1.0.49
-    created: "2020-06-11T18:19:40.512767+03:00"
+    created: "2020-06-21T10:10:37.914783+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 17e56369850ab0fe95c4cd312d6d7b8ea7302b616040f23d57ea7800c9943f95
     name: spotinst-kubernetes-cluster-controller
@@ -147,7 +156,7 @@ entries:
     version: 1.0.53
   - apiVersion: v1
     appVersion: 1.0.49
-    created: "2020-06-11T18:19:40.51133+03:00"
+    created: "2020-06-21T10:10:37.913352+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 0962fdfd86eec5e1b7bd73477541e20b21ed76b01c6061e10c150c5da449925f
     name: spotinst-kubernetes-cluster-controller
@@ -156,7 +165,7 @@ entries:
     version: 1.0.52
   - apiVersion: v1
     appVersion: 1.0.49
-    created: "2020-06-11T18:19:40.51045+03:00"
+    created: "2020-06-21T10:10:37.912003+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 623c95fb0ce68151079bdb382ab176cda30a0355aacd377a280b8dda74775174
     name: spotinst-kubernetes-cluster-controller
@@ -165,7 +174,7 @@ entries:
     version: 1.0.51
   - apiVersion: v1
     appVersion: 1.0.49
-    created: "2020-06-11T18:19:40.509621+03:00"
+    created: "2020-06-21T10:10:37.907892+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 3f27d41d68744d51d51920e1a3e56e162dc9c2323545557d9d0976a6cc99a88a
     name: spotinst-kubernetes-cluster-controller
@@ -174,7 +183,7 @@ entries:
     version: 1.0.50
   - apiVersion: v1
     appVersion: 1.0.48
-    created: "2020-06-11T18:19:40.508863+03:00"
+    created: "2020-06-21T10:10:37.90612+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 09f509f21cd1e1e36ce5dddd1a6e82105b181b36e097cdcbfcd0f02e7da69b7a
     name: spotinst-kubernetes-cluster-controller
@@ -183,7 +192,7 @@ entries:
     version: 1.0.49
   - apiVersion: v1
     appVersion: 1.0.47
-    created: "2020-06-11T18:19:40.508122+03:00"
+    created: "2020-06-21T10:10:37.905006+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 9690579fea88fbcf14c689b47d27faae5f14d4eedb310c6e16e525c1366689d1
     name: spotinst-kubernetes-cluster-controller
@@ -192,7 +201,7 @@ entries:
     version: 1.0.48
   - apiVersion: v1
     appVersion: 1.0.47
-    created: "2020-06-11T18:19:40.507396+03:00"
+    created: "2020-06-21T10:10:37.904036+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 10bcaa82a7d0f43c9a0566c72efc037efac87f45f5c433358df0cb7265378fa0
     name: spotinst-kubernetes-cluster-controller
@@ -201,7 +210,7 @@ entries:
     version: 1.0.47
   - apiVersion: v1
     appVersion: 1.0.46
-    created: "2020-06-11T18:19:40.506704+03:00"
+    created: "2020-06-21T10:10:37.902997+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: fb678436484490888703e66e9ef8e0504332f21af140234d5e08fe9edb6f0d37
     name: spotinst-kubernetes-cluster-controller
@@ -210,7 +219,7 @@ entries:
     version: 1.0.46
   - apiVersion: v1
     appVersion: 1.0.45
-    created: "2020-06-11T18:19:40.505953+03:00"
+    created: "2020-06-21T10:10:37.902069+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 71e70cbe94f465a63dddae07cea19306edb07c73483e41d23a730b2a19ce4d27
     name: spotinst-kubernetes-cluster-controller
@@ -219,7 +228,7 @@ entries:
     version: 1.0.45
   - apiVersion: v1
     appVersion: 1.0.44
-    created: "2020-06-11T18:19:40.505243+03:00"
+    created: "2020-06-21T10:10:37.901098+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 329bb96ef43cf3b45533b170c5b4e3a667fe465c15bf902db818e94e6cc59bc8
     name: spotinst-kubernetes-cluster-controller
@@ -228,7 +237,7 @@ entries:
     version: 1.0.44
   - apiVersion: v1
     appVersion: 1.0.43
-    created: "2020-06-11T18:19:40.504522+03:00"
+    created: "2020-06-21T10:10:37.900148+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: bb1504f1e743294b15bd3d8f1c6d96b940274074fe017b45de28fa46031e8d0a
     name: spotinst-kubernetes-cluster-controller
@@ -237,7 +246,7 @@ entries:
     version: 1.0.43
   - apiVersion: v1
     appVersion: 1.0.42
-    created: "2020-06-11T18:19:40.503782+03:00"
+    created: "2020-06-21T10:10:37.899145+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 5d560b128486eb83b9121cc17ea397c0195ccd8d47ece0924f1cba1a46654a90
     name: spotinst-kubernetes-cluster-controller
@@ -246,7 +255,7 @@ entries:
     version: 1.0.42
   - apiVersion: v1
     appVersion: 1.0.40
-    created: "2020-06-11T18:19:40.503026+03:00"
+    created: "2020-06-21T10:10:37.898123+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: a5466911ce1101abd4afd1fda386e274bc85904eaac6811cbab73335542f122b
     name: spotinst-kubernetes-cluster-controller
@@ -255,7 +264,7 @@ entries:
     version: 1.0.41
   - apiVersion: v1
     appVersion: 1.0.39
-    created: "2020-06-11T18:19:40.502261+03:00"
+    created: "2020-06-21T10:10:37.89704+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 726b934596e3e0a88acd156387727656355c3f034af60618c02f67a8610fde21
     name: spotinst-kubernetes-cluster-controller
@@ -264,7 +273,7 @@ entries:
     version: 1.0.40
   - apiVersion: v1
     appVersion: 1.0.38
-    created: "2020-06-11T18:19:40.50111+03:00"
+    created: "2020-06-21T10:10:37.895943+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 835adbfdf5a8861fec3edf33a8a8fd082214446ac6ca92939fee5474e0d3c452
     name: spotinst-kubernetes-cluster-controller
@@ -273,7 +282,7 @@ entries:
     version: 1.0.39
   - apiVersion: v1
     appVersion: 1.0.37
-    created: "2020-06-11T18:19:40.499829+03:00"
+    created: "2020-06-21T10:10:37.893662+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 71c03f8e94025b1d50327987ee372da05ab5bbdfb01685bfd18becbd75d4af49
     name: spotinst-kubernetes-cluster-controller
@@ -282,7 +291,7 @@ entries:
     version: 1.0.38
   - apiVersion: v1
     appVersion: 1.0.35
-    created: "2020-06-11T18:19:40.499064+03:00"
+    created: "2020-06-21T10:10:37.89188+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 92d1396738862179497b8967073e3eff934ec701cbcd90441b6ffb4e1407cc20
     name: spotinst-kubernetes-cluster-controller
@@ -291,7 +300,7 @@ entries:
     version: 1.0.37
   - apiVersion: v1
     appVersion: 1.0.35
-    created: "2020-06-11T18:19:40.498273+03:00"
+    created: "2020-06-21T10:10:37.890688+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 773722a528b66b7e6ac59f29f7260b6194f92ff15726e9c4f987513cfd6b7e4c
     name: spotinst-kubernetes-cluster-controller
@@ -300,7 +309,7 @@ entries:
     version: 1.0.36
   - apiVersion: v1
     appVersion: 1.0.34
-    created: "2020-06-11T18:19:40.497428+03:00"
+    created: "2020-06-21T10:10:37.889586+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 7cce60463fbddf8df9729a3fb00fec6e48622f072605ae0038ec7a0bc69ebf8e
     name: spotinst-kubernetes-cluster-controller
@@ -309,7 +318,7 @@ entries:
     version: 1.0.35
   - apiVersion: v1
     appVersion: 1.0.34
-    created: "2020-06-11T18:19:40.496468+03:00"
+    created: "2020-06-21T10:10:37.888563+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 7caebe3d0cc04a49a1e7147ab80e3dc8a3074c0c892fcebf475b4351b28d1c9a
     name: spotinst-kubernetes-cluster-controller
@@ -318,7 +327,7 @@ entries:
     version: 1.0.34
   - apiVersion: v1
     appVersion: 1.0.32
-    created: "2020-06-11T18:19:40.495076+03:00"
+    created: "2020-06-21T10:10:37.88735+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 9bd1dd1960657247e4cb9ce093a8f5f2a6ef53602210d635db81edad1cf6f81d
     name: spotinst-kubernetes-cluster-controller
@@ -327,11 +336,11 @@ entries:
     version: 1.0.32
   - apiVersion: v1
     appVersion: 1.0.30
-    created: "2020-06-11T18:19:40.493666+03:00"
+    created: "2020-06-21T10:10:37.885658+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 091434ef50519432cb2f8c0bcab61bc29f31f3e390a5a43d1d43a7a18ea75f75
     name: spotinst-kubernetes-cluster-controller
     urls:
     - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.30.tgz
     version: 1.0.30
-generated: "2020-06-11T18:19:40.492142+03:00"
+generated: "2020-06-21T10:10:37.884386+03:00"
