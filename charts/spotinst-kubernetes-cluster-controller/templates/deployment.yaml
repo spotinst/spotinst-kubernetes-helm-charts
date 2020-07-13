@@ -36,16 +36,32 @@ spec:
           successThreshold: 1
           failureThreshold: 3
         env:
+        {{- if .Values.existingSecret }}
         - name: SPOTINST_TOKEN
           valueFrom:
-            configMapKeyRef:
-              name: {{ .Chart.Name }}-config
-              key: spotinst.token
+            secretKeyRef:
+              name: {{ .Values.existingSecret }}
+              key: token
+        {{- else }}
+        - name: SPOTINST_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Chart.Name }}
+              key: token
+        {{- end }}
+        {{- if .Values.existingSecret }}
         - name: SPOTINST_ACCOUNT
           valueFrom:
-            configMapKeyRef:
-              name: {{ .Chart.Name }}-config
-              key: spotinst.account
+            secretKeyRef:
+              name: {{ .Values.existingSecret }}
+              key: account
+        {{- else }}
+        - name: SPOTINST_ACCOUNT
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Chart.Name }}
+              key: account
+        {{- end }}
         - name: CLUSTER_IDENTIFIER
           valueFrom:
             configMapKeyRef:

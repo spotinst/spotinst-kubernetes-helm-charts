@@ -5,13 +5,6 @@ metadata:
   namespace: {{ required "namespace is missing" .Values.namespace }}
 data:
   # ---------------------------------------------------------------------------
-  # Credentials.
-  #
-  # TODO(liran): Remove the `spotinst.` prefix.
-  # ---------------------------------------------------------------------------
-  spotinst.token: {{ required "spotinst.token is missing" .Values.spotinst.token }}
-  spotinst.account: {{ required "spotinst.account is missing" .Values.spotinst.account }}
-  # ---------------------------------------------------------------------------
   # Configuration.
   # ---------------------------------------------------------------------------
   spotinst.cluster-identifier: {{ required "spotinst.clusterIdentifier is missing" .Values.spotinst.clusterIdentifier }}
