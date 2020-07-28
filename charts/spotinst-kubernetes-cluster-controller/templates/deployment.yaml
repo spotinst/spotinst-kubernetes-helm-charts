@@ -36,7 +36,7 @@ spec:
           successThreshold: 1
           failureThreshold: 3
         env:
-        {{- if not .Values.credentialsSecret.enabled }}
+        {{- if not .Values.spotinst.credentialsSecret.enabled }}
         - name: SPOTINST_TOKEN
           valueFrom:
             configMapKeyRef:
@@ -51,12 +51,12 @@ spec:
         - name: SPOTINST_TOKEN
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.credentialsSecret.name | default .Chart.Name | quote }}
+              name: {{ .Values.spotinst.credentialsSecret.name | default .Chart.Name | quote }}
               key: token
         - name: SPOTINST_ACCOUNT
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.credentialsSecret.name | default .Chart.Name | quote }}
+              name: {{ .Values.spotinst.credentialsSecret.name | default .Chart.Name | quote }}
               key: account
         {{- end }}
         - name: CLUSTER_IDENTIFIER

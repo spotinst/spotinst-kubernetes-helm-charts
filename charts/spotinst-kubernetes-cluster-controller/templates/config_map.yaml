@@ -9,7 +9,7 @@ data:
   #
   # TODO(liran): Remove the `spotinst.` prefix.
   # ---------------------------------------------------------------------------
-  {{- if not .Values.credentialsSecret.enabled }}
+  {{- if not .Values.spotinst.credentialsSecret.enabled }}
   spotinst.token: {{ required "spotinst.token is missing" .Values.spotinst.token }}
   spotinst.account: {{ required "spotinst.account is missing" .Values.spotinst.account }}
   {{- end -}}
