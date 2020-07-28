@@ -8,8 +8,17 @@ spotinst:
   # Credentials, see: https://api.spotinst.com/spotinst-api/administration/create-an-api-token.
   token: ""
   account: ""
-  ## Use existing secret for token and account.
-  # existingSecret:
+
+  # Will put credentials in k8s secrets instead of ConfigMap
+  credentialsSecret:
+    # disabled for backward compatibility
+    enabled: false
+
+    # custom name for secret
+    # name: spotinst-creds
+
+    # existing secret will be used
+    # useExisting: true
 
   # Configuration.
   clusterIdentifier: ""
