@@ -60,19 +60,6 @@ spec:
         - name: SPOTINST_TOKEN
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.credentialsSecret.name | default .Chart.Name | quote }}
-              key: token
-        {{- end }}
-        {{- if .Values.existingSecret }}
-        - name: SPOTINST_ACCOUNT
-          valueFrom:
-            configMapKeyRef:
-              name: {{ .Chart.Name }}-config
-              key: spotinst.account
-        {{- else }}
-        - name: SPOTINST_TOKEN
-          valueFrom:
-            secretKeyRef:
               name: {{ .Values.spotinst.credentialsSecret.name | default .Chart.Name | quote }}
               key: token
         - name: SPOTINST_ACCOUNT
