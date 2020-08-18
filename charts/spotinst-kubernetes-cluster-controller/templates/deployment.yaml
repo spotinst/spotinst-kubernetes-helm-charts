@@ -35,6 +35,15 @@ spec:
           timeoutSeconds: 2
           successThreshold: 1
           failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 4401
+          initialDelaySeconds: 20
+          periodSeconds: 20
+          timeoutSeconds: 2
+          successThreshold: 1
+          failureThreshold: 3
         env:
         {{- if not .Values.spotinst.credentialsSecret.enabled }}
         - name: SPOTINST_TOKEN
