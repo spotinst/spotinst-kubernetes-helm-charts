@@ -62,6 +62,10 @@ rules:
 - apiGroups: ["certificates.k8s.io"]
   resources: ["certificatesigningrequests/approval"]
   verbs: ["patch", "update"]
+- apiGroups: ["certificates.k8s.io"]
+  resources: ["signers"]
+  resourceNames: ["kubernetes.io/kubelet-serving", "kubernetes.io/kube-apiserver-client-kubelet"]
+  verbs: ["approve"]
   # ---------------------------------------------------------------------------
   # Required by the Spotinst Auto Update feature.
   # ---------------------------------------------------------------------------
