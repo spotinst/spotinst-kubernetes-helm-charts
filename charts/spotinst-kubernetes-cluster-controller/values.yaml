@@ -16,6 +16,11 @@ spotinst:
   disableAutoUpdate: false
   enableCsrApproval: false
 
+# Use a Secret instead of a ConfigMap to store credentials.
+secret:
+  # Disabled for backward compatibility.
+  enabled: false
+
 # Metrics Server configuration.
 metrics-server:
   deployChart: true
