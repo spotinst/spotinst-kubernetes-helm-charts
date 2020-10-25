@@ -89,3 +89,9 @@ rules:
 - apiGroups: [""]
   resources: ["pods"]
   verbs: ["get", "list", "patch", "update", "create", "delete"]
+  # ----------------------------------------------------------------------------
+  # Required by the Spotinst Big Data feature
+  # ----------------------------------------------------------------------------
+- apiGroups: ["sparkoperator.k8s.io"]
+  resources: ["sparkapplications", "scheduledsparkapplications"]
+  verbs: ["get", "list"]
