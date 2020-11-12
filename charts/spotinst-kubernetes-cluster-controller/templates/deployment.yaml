@@ -26,6 +26,10 @@ spec:
       - name: {{ .Chart.Name }}
         image: {{ .Values.image.repository }}:{{ .Chart.AppVersion }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        {{- if .Values.image.pullSecrets }}
+        imagePullSecrets:
+{{ toYaml .Values.image.pullSecrets | indent 8 }}
+        {{- end }}
         livenessProbe:
           httpGet:
             path: /healthcheck
