@@ -34,7 +34,7 @@ rules:
   verbs: ["get"]
 - apiGroups: ["apiextensions.k8s.io"]
   resources: ["customresourcedefinitions"]
-  verbs: ["list"]
+  verbs: ["list", "get"]
   # ---------------------------------------------------------------------------
   # Required by the draining feature and for functional operation.
   # ---------------------------------------------------------------------------
@@ -94,4 +94,7 @@ rules:
   # ----------------------------------------------------------------------------
 - apiGroups: ["sparkoperator.k8s.io"]
   resources: ["sparkapplications", "scheduledsparkapplications"]
+  verbs: ["get", "list"]
+- apiGroups: ["wave.spot.io"]
+  resources: ["sparkapplications", "wavecomponents"]
   verbs: ["get", "list"]
