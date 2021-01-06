@@ -46,7 +46,7 @@ resources: {}
 image:
   repository: spotinst/kubernetes-cluster-controller
   pullPolicy: Always
-  pullSecrets: {}
+  pullSecrets: []
 
 # DNS policy.
 # ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
