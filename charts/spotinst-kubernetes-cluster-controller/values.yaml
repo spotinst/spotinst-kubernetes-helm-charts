@@ -50,7 +50,7 @@ image:
 
 # DNS policy.
 # ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
-dnsPolicy: ClusterFirst
+dnsPolicy: Default
 
 # DNS config.
 # ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
