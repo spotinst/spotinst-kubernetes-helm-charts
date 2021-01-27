@@ -89,6 +89,9 @@ rules:
 - apiGroups: [""]
   resources: ["pods"]
   verbs: ["get", "list", "patch", "update", "create", "delete"]
+- apiGroups: ["batch"]
+  resources: ["jobs"]
+  verbs: ["get", "list", "patch","update","create","delete"]
   # ----------------------------------------------------------------------------
   # Required by the Spotinst Big Data feature
   # ----------------------------------------------------------------------------
@@ -96,5 +99,5 @@ rules:
   resources: ["sparkapplications", "scheduledsparkapplications"]
   verbs: ["get", "list"]
 - apiGroups: ["wave.spot.io"]
-  resources: ["sparkapplications", "wavecomponents"]
+  resources: ["sparkapplications", "wavecomponents", "waveenvironments"]
   verbs: ["get", "list"]
