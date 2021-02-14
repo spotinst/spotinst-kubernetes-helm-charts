@@ -4,8 +4,8 @@ description: A Helm chart for Spotinst Kubernetes cluster controller
 
 # Chart version. This version number should be incremented each time you make
 # changes to the chart and its templates, including the app version.
-version: 1.0.84
+version: 1.0.85
 
 # Application version. This version number should be incremented each time
 # you make changes to the application.
-appVersion: 1.0.72
+appVersion: 1.0.73
