@@ -1,0 +1,62 @@
+{{- if and .Values.aksConnector.enabled .Values.aksConnector.acdIdentifier }}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    k8s-app: {{ .Chart.Name }}-aks-connector
+  name: {{ .Chart.Name }}-aks-connector
+  namespace: {{ required "namespace is missing" .Values.namespace }}
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-weight: "5"
+    helm.sh/hook-delete-policy: hook-succeeded
+spec:
+  template:
+    metadata:
+      labels:
+        k8s-app: {{ .Chart.Name }}-aks-connector
+    spec:
+      nodeSelector:
+        kubernetes.azure.com/mode: system
+      {{- if .Values.image.pullSecrets }}
+      imagePullSecrets: {{ toYaml .Values.image.pullSecrets | nindent 6 }}
+      {{- end }}
+      containers:
+      - name: ocean-aks-connector
+        image: {{ .Values.aksConnector.image.repository }}
+        imagePullPolicy: {{ .Values.aksConnector.image.pullPolicy }}
+        args: ["connect-ocean"]
+        env:
+        - name: SPOT_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Chart.Name }}
+              key: token
+              optional: true
+        - name: SPOT_ACCOUNT
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Chart.Name }}
+              key: account
+              optional: true
+        - name: SPOT_CLUSTER_IDENTIFIER
+          valueFrom:
+            configMapKeyRef:
+              name: {{ .Chart.Name }}-config
+              key: spotinst.cluster-identifier
+        - name: ACD_IDENTIFIER
+          value: {{ .Values.aksConnector.acdIdentifier }}
+        resources: {{- toYaml .Values.aksConnector.resources | nindent 10 }}
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsUser: 0
+        volumeMounts:
+          - name: waagent
+            mountPath: /var/lib/waagent
+      restartPolicy: Never
+      volumes:
+      - name: waagent
+        hostPath:
+          path: /var/lib/waagent
+          type: Directory
+{{- end }}

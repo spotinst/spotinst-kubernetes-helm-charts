@@ -101,3 +101,26 @@ affinity:
             values:
             - spotinst-kubernetes-cluster-controller
         topologyKey: kubernetes.io/hostname
+
+# Microsoft Azure AKS Connector.
+aksConnector:
+  enabled: true
+  acdIdentifier: ""
+
+  # Resource requests and limits.
+  # ref: http://kubernetes.io/docs/user-guide/compute-resources/
+  resources: {}
+    # If you do want to specify resources, uncomment the following lines,
+    # adjust them as necessary, and remove the curly braces after 'resources:'.
+    # limits:
+    #  cpu: 100m
+    #  memory: 128Mi
+    # requests:
+    #  cpu: 100m
+    #  memory: 128Mi
+
+  # Image.
+  # ref: https://kubernetes.io/docs/concepts/containers/images/
+  image:
+    repository: spotinst/ocean-aks-connector:1.0.0-alpha
+    pullPolicy: IfNotPresent
