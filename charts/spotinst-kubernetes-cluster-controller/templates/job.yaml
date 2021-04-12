@@ -44,7 +44,7 @@ spec:
             configMapKeyRef:
               name: {{ .Chart.Name }}-config
               key: spotinst.cluster-identifier
-        - name: ACD_IDENTIFIER
+        - name: SPOT_ACD_IDENTIFIER
           value: {{ .Values.aksConnector.acdIdentifier }}
         resources: {{- toYaml .Values.aksConnector.resources | nindent 10 }}
         securityContext:
@@ -53,10 +53,14 @@ spec:
         volumeMounts:
           - name: waagent
             mountPath: /var/lib/waagent
-      restartPolicy: Never
       volumes:
       - name: waagent
         hostPath:
           path: /var/lib/waagent
           type: Directory
+      dnsPolicy: {{ .Values.dnsPolicy }}
+      {{- if .Values.dnsConfig }}
+      dnsConfig: {{ toYaml .Values.dnsConfig | nindent 8 }}
+      {{- end }}
+      restartPolicy: Never
 {{- end }}

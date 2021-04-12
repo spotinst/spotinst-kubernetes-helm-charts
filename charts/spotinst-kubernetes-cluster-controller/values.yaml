@@ -54,10 +54,10 @@ dnsPolicy: Default
 
 # DNS config.
 # ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
-dnsConfig:
-  options:
-  - name: ndots
-    value: "1"
+dnsConfig: {}
+  # options:
+  # - name: ndots
+  #   value: "1"
 
 # Tolerations for nodes that have taints on them.
 # ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
@@ -102,9 +102,14 @@ affinity:
             - spotinst-kubernetes-cluster-controller
         topologyKey: kubernetes.io/hostname
 
-# Microsoft Azure AKS Connector.
+# Ocean AKS Connector.
 aksConnector:
+  # Controls whether the Ocean AKS Connector should be deployed
+  # (requires a valid `aksConnector.acdIdentifier`).
   enabled: true
+
+  # A unique identifier used by the Ocean AKS Connector when
+  # importing an AKS cluster.
   acdIdentifier: ""
 
   # Resource requests and limits.
@@ -122,5 +127,5 @@ aksConnector:
   # Image.
   # ref: https://kubernetes.io/docs/concepts/containers/images/
   image:
-    repository: spotinst/ocean-aks-connector:1.0.0-alpha
+    repository: spotinst/ocean-aks-connector:1.0.3
     pullPolicy: IfNotPresent
