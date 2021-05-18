@@ -45,7 +45,7 @@ resources: {}
 # ref: https://kubernetes.io/docs/concepts/containers/images/
 image:
   repository: gcr.io/spotinst-artifacts/kubernetes-cluster-controller
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   pullSecrets: []
 
 # DNS policy.
@@ -128,4 +128,4 @@ aksConnector:
   # ref: https://kubernetes.io/docs/concepts/containers/images/
   image:
     repository: spotinst/ocean-aks-connector:1.0.3
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
