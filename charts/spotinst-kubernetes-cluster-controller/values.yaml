@@ -44,8 +44,8 @@ resources: {}
 # Image.
 # ref: https://kubernetes.io/docs/concepts/containers/images/
 image:
-  repository: spotinst/kubernetes-cluster-controller
-  pullPolicy: Always
+  repository: gcr.io/spotinst-artifacts/kubernetes-cluster-controller
+  pullPolicy: IfNotPresent
   pullSecrets: []
 
 # DNS policy.
