@@ -1,21 +1,20 @@
+{{- if .Values.configMap.create }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Chart.Name }}-config
-  namespace: {{ required "namespace is missing" .Values.namespace }}
+  name: {{ include "ocean-controller.configMapName" . }}
+  namespace: {{ include "ocean-controller.namespace" . }}
+  labels:
+  {{- include "ocean-controller.commonLabels" . | nindent 4 }}
+  {{- include "ocean-controller.controllerLabels" . | nindent 4 }}
 data:
-  {{ if not .Values.secret.enabled -}}
-  # ---------------------------------------------------------------------------
-  # Credentials.
-  # ---------------------------------------------------------------------------
-  spotinst.token: {{ required "spotinst.token is missing" .Values.spotinst.token }}
-  spotinst.account: {{ required "spotinst.account is missing" .Values.spotinst.account }}
-  {{ end -}}
-  # ---------------------------------------------------------------------------
-  # Configuration.
-  # ---------------------------------------------------------------------------
-  spotinst.cluster-identifier: {{ required "spotinst.clusterIdentifier is missing" .Values.spotinst.clusterIdentifier }}
+  {{- if not .Values.secret.enabled }}
+  spotinst.token: {{ required "`spotinst.token` must be specified" .Values.spotinst.token }}
+  spotinst.account: {{ required "`spotinst.account` must be specified" .Values.spotinst.account }}
+  {{- end }}
+  spotinst.cluster-identifier: {{ required "`spotinst.clusterIdentifier` must be specified" .Values.spotinst.clusterIdentifier }}
   base-url: {{ default "" .Values.spotinst.baseUrl | quote }}
   proxy-url: {{ default "" .Values.spotinst.proxyUrl | quote }}
   disable-auto-update: {{ default "false" .Values.spotinst.disableAutoUpdate | quote }}
   enable-csr-approval: {{ default "false" .Values.spotinst.enableCsrApproval | quote }}
+{{- end }}

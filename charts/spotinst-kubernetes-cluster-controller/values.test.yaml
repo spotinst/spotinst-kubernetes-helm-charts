@@ -1,22 +1,21 @@
-# Test values for spotinst-kubernetes-cluster-controller.
+metrics-server:
+  deployChart: false
 
-# Default namespace.
-namespace: test
-
-# Spotinst configuration.
 spotinst:
-  # Credentials, see: https://api.spotinst.com/spotinst-api/administration/create-an-api-token.
   token: test
   account: test
-
-  # Configuration.
   clusterIdentifier: test
-  baseUrl: test
-  proxyUrl: test
-  disableAutoUpdate: true
-  enableCsrApproval: true
 
-# Image.
-image:
-  repository: spotinst/kubernetes-cluster-controller
-  pullPolicy: Always
+secret:
+  enabled: true
+  create: true
+
+serviceAccount:
+  create: true
+
+configMap:
+  create: true
+
+aksConnector:
+  enabled: true
+  acdIdentifier: test

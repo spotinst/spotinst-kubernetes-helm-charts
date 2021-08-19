@@ -2,23 +2,27 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
+  name: {{ include "ocean-controller.aksConnectorJobName" . }}
+  namespace: {{ include "ocean-controller.namespace" . }}
   labels:
-    k8s-app: {{ .Chart.Name }}-aks-connector
-  name: {{ .Chart.Name }}-aks-connector
-  namespace: {{ required "namespace is missing" .Values.namespace }}
+  {{- include "ocean-controller.commonLabels" . | nindent 4 }}
+  {{- include "ocean-controller.aksConnectorLabels" . | nindent 4 }}
   annotations:
     helm.sh/hook: pre-install
     helm.sh/hook-weight: "5"
-    helm.sh/hook-delete-policy: hook-succeeded
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
 spec:
   template:
     metadata:
       labels:
-        k8s-app: {{ .Chart.Name }}-aks-connector
+      {{- include "ocean-controller.aksConnectorLabels" . | nindent 8 }}
     spec:
-      nodeSelector:
-        kubernetes.azure.com/mode: system
-      {{- if .Values.image.pullSecrets }}
+      {{- if .Values.aksConnector.nodeSelector }}
+      nodeSelector: {{ toYaml .Values.aksConnector.nodeSelector | nindent 8 }}
+      {{- end }}
+      {{- if .Values.aksConnector.image.pullSecrets }}
+      imagePullSecrets: {{ toYaml .Values.aksConnector.image.pullSecrets | nindent 6 }}
+      {{- else if .Values.image.pullSecrets }}
       imagePullSecrets: {{ toYaml .Values.image.pullSecrets | nindent 6 }}
       {{- end }}
       containers:
@@ -30,29 +34,26 @@ spec:
         - name: SPOT_TOKEN
           valueFrom:
             secretKeyRef:
-              name: {{ .Chart.Name }}
+              name: {{ include "ocean-controller.secretName" . }}
               key: token
-              optional: true
         - name: SPOT_ACCOUNT
           valueFrom:
             secretKeyRef:
-              name: {{ .Chart.Name }}
+              name: {{ include "ocean-controller.secretName" . }}
               key: account
-              optional: true
         - name: SPOT_CLUSTER_IDENTIFIER
-          valueFrom:
-            configMapKeyRef:
-              name: {{ .Chart.Name }}-config
-              key: spotinst.cluster-identifier
+          value: {{ required "`spotinst.clusterIdentifier` must be specified" .Values.spotinst.clusterIdentifier }}
         - name: SPOT_ACD_IDENTIFIER
           value: {{ .Values.aksConnector.acdIdentifier }}
-        resources: {{- toYaml .Values.aksConnector.resources | nindent 10 }}
+        {{- if .Values.resources }}
+        resources: {{ toYaml .Values.resources | nindent 10 }}
+        {{- end }}
         securityContext:
           allowPrivilegeEscalation: false
           runAsUser: 0
         volumeMounts:
-          - name: waagent
-            mountPath: /var/lib/waagent
+        - name: waagent
+          mountPath: /var/lib/waagent
       volumes:
       - name: waagent
         hostPath:
@@ -62,5 +63,23 @@ spec:
       {{- if .Values.dnsConfig }}
       dnsConfig: {{ toYaml .Values.dnsConfig | nindent 8 }}
       {{- end }}
+      tolerations: {{ toYaml .Values.aksConnector.tolerations | nindent 6 }}
       restartPolicy: Never
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ include "ocean-controller.secretName" . }}
+  namespace: {{ include "ocean-controller.namespace" . }}
+  labels:
+  {{- include "ocean-controller.commonLabels" . | nindent 4 }}
+  {{- include "ocean-controller.aksConnectorLabels" . | nindent 4 }}
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-weight: "4"
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+type: Opaque
+data:
+  token: {{ required "`spotinst.token` must be specified" .Values.spotinst.token | b64enc }}
+  account: {{ required "`spotinst.account` must be specified" .Values.spotinst.account | b64enc }}
 {{- end }}

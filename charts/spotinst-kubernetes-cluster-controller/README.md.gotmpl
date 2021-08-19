@@ -1,0 +1,39 @@
+{{ template "chart.header" . }}
+
+{{ template "chart.deprecationWarning" . }}
+
+{{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}
+
+{{ template "chart.description" . }}. This chart is usually installed by the [Ocean Operator](https://github.com/spotinst/ocean-operator), but may also be run manually.
+
+## Installation
+
+1. Add the Spot Helm chart repository:
+
+```sh
+helm repo add spotinst https://spotinst.github.io/spotinst-kubernetes-helm-charts
+```
+
+2. Update your local Helm chart repository cache:
+
+```sh
+helm repo update
+```
+
+3. Install `{{ template "chart.name" . }}`:
+
+```sh
+helm install my-release spotinst/{{ template "chart.name" . }} \
+  --set spotinst.token=REDACTED \
+  --set spotinst.account=REDACTED \
+  --set spotinst.clusterIdentifier=REDACTED \
+  # [...]
+```
+
+> NOTE: Please configure all required chart values using the `set` command line argument or a `values.yaml` file.
+
+{{ template "chart.requirementsSection" . }}
+
+{{ template "chart.valuesSection" . }}
+
+{{ template "helm-docs.versionFooter" . }}
