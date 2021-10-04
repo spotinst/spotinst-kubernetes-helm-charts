@@ -104,3 +104,6 @@ rules:
 - apiGroups: ["wave.spot.io"]
   resources: ["sparkapplications", "wavecomponents", "waveenvironments"]
   verbs: ["get", "list"]
+- apiGroups: ["bigdata.spot.io"]
+  resources: ["bigdataenvironments"]
+  verbs: ["get", "list"]
