@@ -164,3 +164,6 @@ aksConnector:
   # Ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector
   nodeSelector:
     kubernetes.azure.com/mode: system
+
+# -- (Optional) Put custom annotations for Deployment and Pod Spec
+customAnnotations: {}

@@ -6,6 +6,8 @@ metadata:
   labels:
   {{- include "ocean-controller.commonLabels" . | nindent 4 }}
   {{- include "ocean-controller.controllerLabels" . | nindent 4 }}
+  annotations:
+  {{- include "ocean-controller.customAnnotations" . | nindent 4 }}
 spec:
   replicas: 1
   revisionHistoryLimit: 10
@@ -16,6 +18,8 @@ spec:
     metadata:
       labels:
         {{- include "ocean-controller.controllerLabels" . | nindent 8 }}
+      annotations:
+        {{- include "ocean-controller.customAnnotations" . | nindent 8 }}
     spec:
       priorityClassName: {{ include "ocean-controller.priorityClassName" . }}
       affinity: {{- toYaml .Values.affinity | nindent 8 }}
@@ -26,6 +30,11 @@ spec:
       - name: {{ include "ocean-controller.deploymentName" . }}
         image: {{ .Values.image.repository }}:{{ .Chart.AppVersion }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        command: [
+          "/opt/ocean/bin/spotinst-kubernetes-controller",
+          "server",
+          "/opt/ocean/config/prod.yml",
+        ]
         livenessProbe:
           httpGet:
             path: /healthcheck

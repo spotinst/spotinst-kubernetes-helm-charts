@@ -19,3 +19,7 @@ configMap:
 aksConnector:
   enabled: true
   acdIdentifier: test
+
+customAnnotations:
+  foo.bar.com/baz: fizzbazz
+  example.com/foo: 42

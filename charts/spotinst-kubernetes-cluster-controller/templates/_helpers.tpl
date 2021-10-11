@@ -49,6 +49,17 @@ k8s-app: {{ include "ocean-controller.name" . }}-aks-connector
 {{- end }}
 
 {{/*
+Custom annotations.
+*/}}
+{{- define "ocean-controller.customAnnotations" -}}
+{{- if .Values.customAnnotations -}}
+{{- range $k, $v := .Values.customAnnotations }}
+{{ $k | toString | quote }}: {{ $v | toString | quote }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{/*
 Priority class name.
 */}}
 {{- define "ocean-controller.priorityClassName" -}}

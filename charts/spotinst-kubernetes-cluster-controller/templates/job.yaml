@@ -8,6 +8,7 @@ metadata:
   {{- include "ocean-controller.commonLabels" . | nindent 4 }}
   {{- include "ocean-controller.aksConnectorLabels" . | nindent 4 }}
   annotations:
+  {{- include "ocean-controller.customAnnotations" . | nindent 4 }}
     helm.sh/hook: pre-install
     helm.sh/hook-weight: "5"
     helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
@@ -16,6 +17,8 @@ spec:
     metadata:
       labels:
       {{- include "ocean-controller.aksConnectorLabels" . | nindent 8 }}
+      annotations:
+      {{- include "ocean-controller.customAnnotations" . | nindent 8 }}
     spec:
       {{- if .Values.aksConnector.nodeSelector }}
       nodeSelector: {{ toYaml .Values.aksConnector.nodeSelector | nindent 8 }}
