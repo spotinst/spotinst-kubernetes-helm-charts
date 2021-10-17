@@ -164,3 +164,13 @@ aksConnector:
   # Ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector
   nodeSelector:
     kubernetes.azure.com/mode: system
+
+# Metrics Server configuration.
+metrics-server:
+  # -- (Optional) Specifies whether the metrics-server chart should be deployed.
+  deployChart: true
+  # -- (Optional) Arguments to pass to metrics-server on start up.
+  args:
+  - --logtostderr
+  # enable this if you have self-signed certificates, see: https://github.com/kubernetes-incubator/metrics-server
+  #  - --kubelet-insecure-tls
