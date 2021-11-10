@@ -30,15 +30,21 @@ secret:
   # -- (Optional) Controls whether a Secret should be created.
   create: true
   # -- (Optional) Secret name.
-  name: ""
+  name: spotinst-kubernetes-cluster-controller
+
+# CA bundle.
+# Ref: https://kubernetes.io/docs/concepts/configuration/secret/
+caBundleSecret:
+  # -- (Optional) Secret name.
+  name: spotinst-kubernetes-cluster-controller-ca-bundle
 
 # Config Map.
 # Ref: https://kubernetes.io/docs/concepts/configuration/configmap/
 configMap:
   # -- (Optional) Controls whether a ConfigMap should be created.
   create: true
-  # -- (Optional) Service account name.
-  name: ""
+  # -- (Optional) ConfigMap name.
+  name: spotinst-kubernetes-cluster-controller-config
 
 # Service Account.
 # Ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
@@ -46,7 +52,7 @@ serviceAccount:
   # -- (Optional) Controls whether a ServiceAccount should be created.
   create: true
   # -- (Optional) Service account name.
-  name: ""
+  name: spotinst-kubernetes-cluster-controller
 
 # -- (Optional) Resource requests and limits.
 # Ref: http://kubernetes.io/docs/user-guide/compute-resources/
@@ -134,6 +140,8 @@ aksConnector:
   # -- (Optional) Unique identifier used by the Ocean AKS Connector when
   # importing an AKS cluster.
   acdIdentifier: ""
+  # -- (Optional) Job name.
+  jobName: spotinst-kubernetes-cluster-controller-aks-connector
   # -- (Optional) Resource requests and limits.
   # Ref: http://kubernetes.io/docs/user-guide/compute-resources/
   resources: {}

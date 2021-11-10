@@ -98,6 +98,12 @@ spec:
               name: {{ include "ocean-controller.configMapName" . }}
               key: enable-csr-approval
               optional: true
+        - name: USER_ENV_CERTIFICATES
+          valueFrom:
+            secretKeyRef:
+              name: {{ include "ocean-controller.caBundleSecretName" . }}
+              key: userEnvCertificates.pem
+              optional: true
         - name: POD_ID
           valueFrom:
             fieldRef:

@@ -62,11 +62,8 @@ spotinst-cluster-critical
 {{/*
 ConfigMap name.
 */}}
-{{- define "ocean-controller.defaultConfigMapName" -}}
-{{ include "ocean-controller.name" . }}-config
-{{- end }}
 {{- define "ocean-controller.configMapName" -}}
-{{ default (include "ocean-controller.defaultConfigMapName" .) .Values.configMap.name }}
+{{ default (include "ocean-controller.name" .) .Values.configMap.name }}
 {{- end }}
 
 {{/*
@@ -74,6 +71,13 @@ Secret name.
 */}}
 {{- define "ocean-controller.secretName" -}}
 {{ default (include "ocean-controller.name" .) .Values.secret.name }}
+{{- end }}
+
+{{/*
+CA bundle secret name.
+*/}}
+{{- define "ocean-controller.caBundleSecretName" -}}
+{{ default (include "ocean-controller.name" .) .Values.caBundleSecret.name }}
 {{- end }}
 
 {{/*
@@ -108,5 +112,5 @@ Deployment name.
 Job name (ocean-aks-connector).
 */}}
 {{- define "ocean-controller.aksConnectorJobName" -}}
-{{ include "ocean-controller.name" . }}-aks-connector
+{{ default (include "ocean-controller.name" .) .Values.aksConnector.jobName }}
 {{- end }}

@@ -100,10 +100,10 @@ rules:
   # ---------------------------------------------------------------------------
 - apiGroups: ["sparkoperator.k8s.io"]
   resources: ["sparkapplications", "scheduledsparkapplications"]
-  verbs: ["get", "list", "create"]
+  verbs: ["get", "list", "patch", "update", "create", "delete"]
 - apiGroups: ["wave.spot.io"]
   resources: ["sparkapplications", "wavecomponents", "waveenvironments"]
   verbs: ["get", "list"]
 - apiGroups: ["bigdata.spot.io"]
   resources: ["bigdataenvironments"]
-  verbs: ["get", "list", "create"]
+  verbs: ["get", "list", "patch", "update", "create", "delete"]
