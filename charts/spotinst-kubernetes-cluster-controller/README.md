@@ -1,6 +1,6 @@
 # spotinst-kubernetes-cluster-controller
 
-![Version: 1.0.96](https://img.shields.io/badge/Version-1.0.96-informational?style=flat-square) ![AppVersion: 1.0.79](https://img.shields.io/badge/AppVersion-1.0.79-informational?style=flat-square)
+![Version: 1.0.97](https://img.shields.io/badge/Version-1.0.97-informational?style=flat-square) ![AppVersion: 1.0.79](https://img.shields.io/badge/AppVersion-1.0.79-informational?style=flat-square)
 
 A Helm chart for Ocean Controller. This chart is usually installed by the [Ocean Operator](https://github.com/spotinst/ocean-operator), but may also be run manually.
 
