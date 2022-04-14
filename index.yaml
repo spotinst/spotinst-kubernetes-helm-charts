@@ -3,7 +3,26 @@ entries:
   spotinst-kubernetes-cluster-controller:
   - apiVersion: v1
     appVersion: 1.0.81
-    created: "2022-01-07T10:38:40.054239+02:00"
+    created: "2022-04-14T12:49:18.694875+03:00"
+    dependencies:
+    - condition: metrics-server.deployChart
+      name: metrics-server
+      repository: https://kubernetes-sigs.github.io/metrics-server
+      version: 3.8.2
+    description: A Helm chart for Ocean Controller
+    digest: 55c0e3c7dc924b8cec60661028ebba44541e959b70ff661543da53d159d17fae
+    icon: https://docs.spot.io/_media/images/spot_mark.png
+    keywords:
+    - spot
+    - ocean
+    - controller
+    name: spotinst-kubernetes-cluster-controller
+    urls:
+    - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.100.tgz
+    version: 1.0.100
+  - apiVersion: v1
+    appVersion: 1.0.81
+    created: "2022-04-14T12:49:18.829+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -22,7 +41,7 @@ entries:
     version: 1.0.99
   - apiVersion: v1
     appVersion: 1.0.80
-    created: "2022-01-07T10:38:40.053033+02:00"
+    created: "2022-04-14T12:49:18.825894+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -41,7 +60,7 @@ entries:
     version: 1.0.98
   - apiVersion: v1
     appVersion: 1.0.79
-    created: "2022-01-07T10:38:40.051219+02:00"
+    created: "2022-04-14T12:49:18.823247+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -60,7 +79,7 @@ entries:
     version: 1.0.97
   - apiVersion: v1
     appVersion: 1.0.78
-    created: "2022-01-07T10:38:40.04946+02:00"
+    created: "2022-04-14T12:49:18.820402+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -79,7 +98,7 @@ entries:
     version: 1.0.96
   - apiVersion: v1
     appVersion: 1.0.78
-    created: "2022-01-07T10:38:40.047481+02:00"
+    created: "2022-04-14T12:49:18.817665+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -98,7 +117,7 @@ entries:
     version: 1.0.95
   - apiVersion: v1
     appVersion: 1.0.78
-    created: "2022-01-07T10:38:40.046181+02:00"
+    created: "2022-04-14T12:49:18.814193+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -117,7 +136,7 @@ entries:
     version: 1.0.94
   - apiVersion: v1
     appVersion: 1.0.77
-    created: "2022-01-07T10:38:40.044295+02:00"
+    created: "2022-04-14T12:49:18.811722+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -136,7 +155,7 @@ entries:
     version: 1.0.93
   - apiVersion: v1
     appVersion: 1.0.77
-    created: "2022-01-07T10:38:40.042946+02:00"
+    created: "2022-04-14T12:49:18.809149+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -150,7 +169,7 @@ entries:
     version: 1.0.92
   - apiVersion: v1
     appVersion: 1.0.76
-    created: "2022-01-07T10:38:40.041737+02:00"
+    created: "2022-04-14T12:49:18.806923+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -164,7 +183,7 @@ entries:
     version: 1.0.91
   - apiVersion: v1
     appVersion: 1.0.75
-    created: "2022-01-07T10:38:40.040561+02:00"
+    created: "2022-04-14T12:49:18.804615+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -178,7 +197,7 @@ entries:
     version: 1.0.90
   - apiVersion: v1
     appVersion: 1.0.75
-    created: "2022-01-07T10:38:40.039437+02:00"
+    created: "2022-04-14T12:49:18.802246+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -192,7 +211,7 @@ entries:
     version: 1.0.89
   - apiVersion: v1
     appVersion: 1.0.74
-    created: "2022-01-07T10:38:40.038272+02:00"
+    created: "2022-04-14T12:49:18.799413+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -206,7 +225,7 @@ entries:
     version: 1.0.88
   - apiVersion: v1
     appVersion: 1.0.73
-    created: "2022-01-07T10:38:40.036299+02:00"
+    created: "2022-04-14T12:49:18.797084+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -220,7 +239,7 @@ entries:
     version: 1.0.87
   - apiVersion: v1
     appVersion: 1.0.73
-    created: "2022-01-07T10:38:40.0351+02:00"
+    created: "2022-04-14T12:49:18.794992+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -234,7 +253,7 @@ entries:
     version: 1.0.86
   - apiVersion: v1
     appVersion: 1.0.73
-    created: "2022-01-07T10:38:40.033977+02:00"
+    created: "2022-04-14T12:49:18.792819+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -248,7 +267,7 @@ entries:
     version: 1.0.85
   - apiVersion: v1
     appVersion: 1.0.72
-    created: "2022-01-07T10:38:40.032784+02:00"
+    created: "2022-04-14T12:49:18.790539+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -262,7 +281,7 @@ entries:
     version: 1.0.84
   - apiVersion: v1
     appVersion: 1.0.70
-    created: "2022-01-07T10:38:40.031676+02:00"
+    created: "2022-04-14T12:49:18.788997+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -276,7 +295,7 @@ entries:
     version: 1.0.83
   - apiVersion: v1
     appVersion: 1.0.69
-    created: "2022-01-07T10:38:40.03037+02:00"
+    created: "2022-04-14T12:49:18.786827+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -290,7 +309,7 @@ entries:
     version: 1.0.82
   - apiVersion: v1
     appVersion: 1.0.69
-    created: "2022-01-07T10:38:40.029204+02:00"
+    created: "2022-04-14T12:49:18.782544+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -304,7 +323,7 @@ entries:
     version: 1.0.81
   - apiVersion: v1
     appVersion: 1.0.69
-    created: "2022-01-07T10:38:40.027316+02:00"
+    created: "2022-04-14T12:49:18.781101+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -318,7 +337,7 @@ entries:
     version: 1.0.80
   - apiVersion: v1
     appVersion: 1.0.68
-    created: "2022-01-07T10:38:40.025677+02:00"
+    created: "2022-04-14T12:49:18.778936+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -332,7 +351,7 @@ entries:
     version: 1.0.79
   - apiVersion: v1
     appVersion: 1.0.68
-    created: "2022-01-07T10:38:40.024527+02:00"
+    created: "2022-04-14T12:49:18.777401+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -346,7 +365,7 @@ entries:
     version: 1.0.78
   - apiVersion: v1
     appVersion: 1.0.67
-    created: "2022-01-07T10:38:40.023419+02:00"
+    created: "2022-04-14T12:49:18.775469+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -360,7 +379,7 @@ entries:
     version: 1.0.77
   - apiVersion: v1
     appVersion: 1.0.67
-    created: "2022-01-07T10:38:40.022258+02:00"
+    created: "2022-04-14T12:49:18.774017+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -374,7 +393,7 @@ entries:
     version: 1.0.76
   - apiVersion: v1
     appVersion: 1.0.66
-    created: "2022-01-07T10:38:40.021063+02:00"
+    created: "2022-04-14T12:49:18.772555+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -388,7 +407,7 @@ entries:
     version: 1.0.75
   - apiVersion: v1
     appVersion: 1.0.65
-    created: "2022-01-07T10:38:40.019826+02:00"
+    created: "2022-04-14T12:49:18.771129+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -402,7 +421,7 @@ entries:
     version: 1.0.74
   - apiVersion: v1
     appVersion: 1.0.64
-    created: "2022-01-07T10:38:40.017905+02:00"
+    created: "2022-04-14T12:49:18.768225+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -416,7 +435,7 @@ entries:
     version: 1.0.73
   - apiVersion: v1
     appVersion: 1.0.63
-    created: "2022-01-07T10:38:40.016493+02:00"
+    created: "2022-04-14T12:49:18.766038+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -430,7 +449,7 @@ entries:
     version: 1.0.72
   - apiVersion: v1
     appVersion: 1.0.62
-    created: "2022-01-07T10:38:40.014993+02:00"
+    created: "2022-04-14T12:49:18.763611+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -444,7 +463,7 @@ entries:
     version: 1.0.71
   - apiVersion: v1
     appVersion: 1.0.61
-    created: "2022-01-07T10:38:40.013865+02:00"
+    created: "2022-04-14T12:49:18.761512+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -458,7 +477,7 @@ entries:
     version: 1.0.70
   - apiVersion: v1
     appVersion: 1.0.60
-    created: "2022-01-07T10:38:40.01219+02:00"
+    created: "2022-04-14T12:49:18.759302+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -472,7 +491,7 @@ entries:
     version: 1.0.69
   - apiVersion: v1
     appVersion: 1.0.59
-    created: "2022-01-07T10:38:40.010553+02:00"
+    created: "2022-04-14T12:49:18.757113+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -486,7 +505,7 @@ entries:
     version: 1.0.68
   - apiVersion: v1
     appVersion: 1.0.59
-    created: "2022-01-07T10:38:40.008915+02:00"
+    created: "2022-04-14T12:49:18.755022+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -500,7 +519,7 @@ entries:
     version: 1.0.67
   - apiVersion: v1
     appVersion: 1.0.58
-    created: "2022-01-07T10:38:40.007308+02:00"
+    created: "2022-04-14T12:49:18.752963+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -514,7 +533,7 @@ entries:
     version: 1.0.66
   - apiVersion: v1
     appVersion: 1.0.58
-    created: "2022-01-07T10:38:40.004804+02:00"
+    created: "2022-04-14T12:49:18.749129+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -528,7 +547,7 @@ entries:
     version: 1.0.65
   - apiVersion: v1
     appVersion: 1.0.58
-    created: "2022-01-07T10:38:40.003349+02:00"
+    created: "2022-04-14T12:49:18.747932+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -542,7 +561,7 @@ entries:
     version: 1.0.64
   - apiVersion: v1
     appVersion: 1.0.57
-    created: "2022-01-07T10:38:40.001561+02:00"
+    created: "2022-04-14T12:49:18.746409+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -556,7 +575,7 @@ entries:
     version: 1.0.63
   - apiVersion: v1
     appVersion: 1.0.56
-    created: "2022-01-07T10:38:40.000112+02:00"
+    created: "2022-04-14T12:49:18.744475+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -570,7 +589,7 @@ entries:
     version: 1.0.62
   - apiVersion: v1
     appVersion: 1.0.55
-    created: "2022-01-07T10:38:39.998736+02:00"
+    created: "2022-04-14T12:49:18.743053+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -584,7 +603,7 @@ entries:
     version: 1.0.61
   - apiVersion: v1
     appVersion: 1.0.54
-    created: "2022-01-07T10:38:39.997405+02:00"
+    created: "2022-04-14T12:49:18.741734+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -598,7 +617,7 @@ entries:
     version: 1.0.60
   - apiVersion: v1
     appVersion: 1.0.53
-    created: "2022-01-07T10:38:39.996407+02:00"
+    created: "2022-04-14T12:49:18.740396+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -612,7 +631,7 @@ entries:
     version: 1.0.59
   - apiVersion: v1
     appVersion: 1.0.52
-    created: "2022-01-07T10:38:39.995404+02:00"
+    created: "2022-04-14T12:49:18.739128+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -626,7 +645,7 @@ entries:
     version: 1.0.58
   - apiVersion: v1
     appVersion: 1.0.52
-    created: "2022-01-07T10:38:39.993565+02:00"
+    created: "2022-04-14T12:49:18.73718+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -640,7 +659,7 @@ entries:
     version: 1.0.57
   - apiVersion: v1
     appVersion: 1.0.51
-    created: "2022-01-07T10:38:39.992454+02:00"
+    created: "2022-04-14T12:49:18.734952+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -654,7 +673,7 @@ entries:
     version: 1.0.56
   - apiVersion: v1
     appVersion: 1.0.51
-    created: "2022-01-07T10:38:39.991375+02:00"
+    created: "2022-04-14T12:49:18.733484+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -668,7 +687,7 @@ entries:
     version: 1.0.55
   - apiVersion: v1
     appVersion: 1.0.50
-    created: "2022-01-07T10:38:39.990195+02:00"
+    created: "2022-04-14T12:49:18.732149+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -682,7 +701,7 @@ entries:
     version: 1.0.54
   - apiVersion: v1
     appVersion: 1.0.49
-    created: "2022-01-07T10:38:39.988927+02:00"
+    created: "2022-04-14T12:49:18.731013+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -696,7 +715,7 @@ entries:
     version: 1.0.53
   - apiVersion: v1
     appVersion: 1.0.49
-    created: "2022-01-07T10:38:39.987817+02:00"
+    created: "2022-04-14T12:49:18.729872+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -710,7 +729,7 @@ entries:
     version: 1.0.52
   - apiVersion: v1
     appVersion: 1.0.49
-    created: "2022-01-07T10:38:39.98641+02:00"
+    created: "2022-04-14T12:49:18.728228+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -724,7 +743,7 @@ entries:
     version: 1.0.51
   - apiVersion: v1
     appVersion: 1.0.49
-    created: "2022-01-07T10:38:39.985357+02:00"
+    created: "2022-04-14T12:49:18.727098+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -738,7 +757,7 @@ entries:
     version: 1.0.50
   - apiVersion: v1
     appVersion: 1.0.48
-    created: "2022-01-07T10:38:39.984332+02:00"
+    created: "2022-04-14T12:49:18.725782+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -752,7 +771,7 @@ entries:
     version: 1.0.49
   - apiVersion: v1
     appVersion: 1.0.47
-    created: "2022-01-07T10:38:39.982544+02:00"
+    created: "2022-04-14T12:49:18.724014+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -766,7 +785,7 @@ entries:
     version: 1.0.48
   - apiVersion: v1
     appVersion: 1.0.47
-    created: "2022-01-07T10:38:39.981337+02:00"
+    created: "2022-04-14T12:49:18.721398+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -780,7 +799,7 @@ entries:
     version: 1.0.47
   - apiVersion: v1
     appVersion: 1.0.46
-    created: "2022-01-07T10:38:39.980121+02:00"
+    created: "2022-04-14T12:49:18.720353+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -794,7 +813,7 @@ entries:
     version: 1.0.46
   - apiVersion: v1
     appVersion: 1.0.45
-    created: "2022-01-07T10:38:39.978979+02:00"
+    created: "2022-04-14T12:49:18.719187+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -808,7 +827,7 @@ entries:
     version: 1.0.45
   - apiVersion: v1
     appVersion: 1.0.44
-    created: "2022-01-07T10:38:39.977791+02:00"
+    created: "2022-04-14T12:49:18.717728+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -822,7 +841,7 @@ entries:
     version: 1.0.44
   - apiVersion: v1
     appVersion: 1.0.43
-    created: "2022-01-07T10:38:39.976666+02:00"
+    created: "2022-04-14T12:49:18.715875+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -836,7 +855,7 @@ entries:
     version: 1.0.43
   - apiVersion: v1
     appVersion: 1.0.42
-    created: "2022-01-07T10:38:39.975629+02:00"
+    created: "2022-04-14T12:49:18.714415+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -850,7 +869,7 @@ entries:
     version: 1.0.42
   - apiVersion: v1
     appVersion: 1.0.40
-    created: "2022-01-07T10:38:39.974576+02:00"
+    created: "2022-04-14T12:49:18.712399+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -864,7 +883,7 @@ entries:
     version: 1.0.41
   - apiVersion: v1
     appVersion: 1.0.39
-    created: "2022-01-07T10:38:39.973269+02:00"
+    created: "2022-04-14T12:49:18.710371+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -878,7 +897,7 @@ entries:
     version: 1.0.40
   - apiVersion: v1
     appVersion: 1.0.38
-    created: "2022-01-07T10:38:39.97188+02:00"
+    created: "2022-04-14T12:49:18.708168+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -892,7 +911,7 @@ entries:
     version: 1.0.39
   - apiVersion: v1
     appVersion: 1.0.37
-    created: "2022-01-07T10:38:39.970344+02:00"
+    created: "2022-04-14T12:49:18.706228+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -906,7 +925,7 @@ entries:
     version: 1.0.38
   - apiVersion: v1
     appVersion: 1.0.35
-    created: "2022-01-07T10:38:39.969295+02:00"
+    created: "2022-04-14T12:49:18.704286+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -920,7 +939,7 @@ entries:
     version: 1.0.37
   - apiVersion: v1
     appVersion: 1.0.35
-    created: "2022-01-07T10:38:39.967964+02:00"
+    created: "2022-04-14T12:49:18.702108+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -934,7 +953,7 @@ entries:
     version: 1.0.36
   - apiVersion: v1
     appVersion: 1.0.34
-    created: "2022-01-07T10:38:39.966924+02:00"
+    created: "2022-04-14T12:49:18.700082+03:00"
     dependencies:
     - condition: metrics-server.deployChart
       name: metrics-server
@@ -948,7 +967,7 @@ entries:
     version: 1.0.35
   - apiVersion: v1
     appVersion: 1.0.34
-    created: "2022-01-07T10:38:39.965891+02:00"
+    created: "2022-04-14T12:49:18.698488+03:00"
     dependencies:
     - name: metrics-server
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -961,7 +980,7 @@ entries:
     version: 1.0.34
   - apiVersion: v1
     appVersion: 1.0.32
-    created: "2022-01-07T10:38:39.964627+02:00"
+    created: "2022-04-14T12:49:18.696993+03:00"
     dependencies:
     - name: metrics-server
       repository: https://kubernetes-charts.storage.googleapis.com
@@ -974,11 +993,11 @@ entries:
     version: 1.0.32
   - apiVersion: v1
     appVersion: 1.0.30
-    created: "2022-01-07T10:38:39.963002+02:00"
+    created: "2022-04-14T12:49:18.695604+03:00"
     description: A Helm chart for Spotinst Kubernetes cluster controller
     digest: 091434ef50519432cb2f8c0bcab61bc29f31f3e390a5a43d1d43a7a18ea75f75
     name: spotinst-kubernetes-cluster-controller
     urls:
     - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.30.tgz
     version: 1.0.30
-generated: "2022-01-07T10:38:39.962262+02:00"
+generated: "2022-04-14T12:49:18.69181+03:00"
