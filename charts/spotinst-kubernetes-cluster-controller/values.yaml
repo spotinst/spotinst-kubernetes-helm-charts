@@ -1,6 +1,9 @@
 # -- (Optional) Default namespace.
 namespace: kube-system
 
+# -- (Optional) configure the amount of replicas for the controller
+replicas: 1
+
 # Configuration.
 spotinst:
   # -- (Required) Spot Token.
