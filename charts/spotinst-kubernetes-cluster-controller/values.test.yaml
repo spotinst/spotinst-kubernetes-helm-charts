@@ -20,7 +20,7 @@ aksConnector:
   enabled: true
   acdIdentifier: test
 
-additionalLabels: 
+additionalLabels:
   nologging: 'true'
 
 podAnnotations:

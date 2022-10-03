@@ -39,7 +39,7 @@ additional labels.
 */}}
 {{- define "ocean-controller.additionalLabels" -}}
 {{- if .Values.additionalLabels }}
-{{ toYaml .Values.additionalLabels }}
+{{- toYaml .Values.additionalLabels -}}
 {{- end }}
 {{- end }}
 
