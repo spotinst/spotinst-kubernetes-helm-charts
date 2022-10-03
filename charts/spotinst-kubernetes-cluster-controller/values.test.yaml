@@ -19,3 +19,9 @@ configMap:
 aksConnector:
   enabled: true
   acdIdentifier: test
+
+additionalLabels: 
+  nologging: 'true'
+
+podAnnotations:
+  co.elastic.logs/enabled: 'false'

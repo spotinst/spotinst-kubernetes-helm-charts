@@ -16,6 +16,11 @@ spec:
     metadata:
       labels:
         {{- include "ocean-controller.controllerLabels" . | nindent 8 }}
+        {{- include "ocean-controller.additionalLabels" . | nindent 8 }}
+      {{- if .Values.podAnnotations }}
+      annotations:
+        {{- toYaml .Values.podAnnotations | nindent 8}}
+      {{- end }}
     spec:
       priorityClassName: {{ include "ocean-controller.priorityClassName" . }}
       affinity: {{- toYaml .Values.affinity | nindent 8 }}

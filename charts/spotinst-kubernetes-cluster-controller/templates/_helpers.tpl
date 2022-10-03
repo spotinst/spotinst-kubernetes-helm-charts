@@ -35,6 +35,15 @@ app.kubernetes.io/name: ocean-controller
 {{- end }}
 
 {{/*
+additional labels.
+*/}}
+{{- define "ocean-controller.additionalLabels" -}}
+{{- if .Values.additionalLabels }}
+{{ toYaml .Values.additionalLabels }}
+{{- end }}
+{{- end }}
+
+{{/*
 Selector labels (ocean-controller).
 */}}
 {{- define "ocean-controller.controllerLabels" -}}
