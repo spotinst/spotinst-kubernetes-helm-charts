@@ -185,3 +185,8 @@ metrics-server:
   - --logtostderr
   # enable this if you have self-signed certificates, see: https://github.com/kubernetes-incubator/metrics-server
   #  - --kubelet-insecure-tls
+
+# additional pod labels
+additionalLabels: {}
+#addtional pod annotation 
+podAnnotations: {}
