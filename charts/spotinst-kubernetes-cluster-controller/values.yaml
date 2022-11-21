@@ -103,6 +103,8 @@ tolerations:
   tolerationSeconds: 150
 - key: node-role.kubernetes.io/master
   operator: Exists
+- key: node-role.kubernetes.io/control-plane
+  operator: Exists
 
 # Pod scheduling preferences.
 # Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
