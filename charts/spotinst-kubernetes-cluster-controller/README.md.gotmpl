@@ -4,7 +4,7 @@
 
 {{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}
 
-{{ template "chart.description" . }}. This chart is usually installed by the [Ocean Operator](https://github.com/spotinst/ocean-operator), but may also be run manually.
+{{ template "chart.description" . }}.
 
 ## Installation
 
@@ -35,5 +35,26 @@ helm install my-release spotinst/{{ template "chart.name" . }} \
 {{ template "chart.requirementsSection" . }}
 
 {{ template "chart.valuesSection" . }}
+
+## Documentation
+
+If you're new to Spot and want to get started, please check out our [Getting Started](https://docs.spot.io/connect-your-cloud-provider/) guide, available on the [Spot Documentation](https://docs.spot.io/) website.
+
+## Getting Help
+
+We use GitHub issues for tracking bugs and feature requests. Please use these community resources for getting help:
+
+- Ask a question on [Stack Overflow](https://stackoverflow.com/) and tag it with [spotinst-kubernetes-helm-charts](https://stackoverflow.com/questions/tagged/spotinst-kubernetes-helm-charts/).
+- Join our Spot community on [Slack](http://slack.spotinst.com/).
+- Open an [issue](https://github.com/spotinst/spotinst-kubernetes-helm-charts/issues/new/choose/).
+
+## Community
+
+- [Slack](http://slack.spotinst.com/)
+- [Twitter](https://twitter.com/spotinst/)
+
+## License
+
+Code is licensed under the [Apache License 2.0](https://github.com/spotinst/spotinst-kubernetes-helm-charts/blob/master/LICENSE/).
 
 {{ template "helm-docs.versionFooter" . }}
