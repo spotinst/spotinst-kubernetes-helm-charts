@@ -2,6 +2,25 @@ apiVersion: v1
 entries:
   spotinst-kubernetes-cluster-controller:
   - apiVersion: v1
+    appVersion: 1.0.89
+    created: "2023-03-20T15:51:57.344798+02:00"
+    dependencies:
+    - condition: metrics-server.deployChart
+      name: metrics-server
+      repository: https://kubernetes-sigs.github.io/metrics-server
+      version: 3.8.2
+    description: A Helm chart for Ocean Controller
+    digest: 99bbaaabe3d280a47312355420d313ca5dcf71631a948d6e40d896922c0e50ec
+    icon: https://docs.spot.io/_media/images/spot_mark.png
+    keywords:
+    - spot
+    - ocean
+    - controller
+    name: spotinst-kubernetes-cluster-controller
+    urls:
+    - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.109.tgz
+    version: 1.0.109
+  - apiVersion: v1
     appVersion: 1.0.88
     created: "2023-02-13T09:43:46.959835+02:00"
     dependencies:
@@ -1133,4 +1152,4 @@ entries:
     urls:
     - https://spotinst.github.io/spotinst-kubernetes-helm-charts/archives/spotinst-kubernetes-cluster-controller-1.0.30.tgz
     version: 1.0.30
-generated: "2023-02-13T09:43:46.939346+02:00"
+generated: "2023-03-20T15:51:57.326646+02:00"
