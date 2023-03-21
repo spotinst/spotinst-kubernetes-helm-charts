@@ -162,7 +162,7 @@ aksConnector:
   # Ref: https://kubernetes.io/docs/concepts/containers/images/
   image:
     # -- (Optional) Image repository.
-    repository: spotinst/ocean-aks-connector:1.0.8
+    repository: spotinst/ocean-aks-connector:1.0.12
     # -- (Optional) Image pull policy.
     pullPolicy: Always
     # -- (Optional) Image pull secrets.
