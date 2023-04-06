@@ -3,8 +3,10 @@ namespace: kube-system
 
 # -- (Optional) configure the amount of replicas for the controller
 replicas: 1
-deploymentAnnotations:
-  reloader.stakater.com/auto: "true"
+
+# -- Annotations for ocean-controller deployment (Optional)
+deploymentAnnotations: {}
+
 # Configuration.
 spotinst:
   # -- (Required) Spot Token.
