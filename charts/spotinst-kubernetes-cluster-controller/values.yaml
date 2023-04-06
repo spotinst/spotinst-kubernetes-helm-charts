@@ -3,7 +3,8 @@ namespace: kube-system
 
 # -- (Optional) configure the amount of replicas for the controller
 replicas: 1
-
+deploymentAnnotations:
+  reloader.stakater.com/auto: "true"
 # Configuration.
 spotinst:
   # -- (Required) Spot Token.
