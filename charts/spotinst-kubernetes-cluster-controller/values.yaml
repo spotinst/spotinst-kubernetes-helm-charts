@@ -4,6 +4,9 @@ namespace: kube-system
 # -- (Optional) configure the amount of replicas for the controller
 replicas: 1
 
+# -- Annotations for ocean-controller deployment (Optional)
+deploymentAnnotations: {}
+
 # Configuration.
 spotinst:
   # -- (Required) Spot Token.
