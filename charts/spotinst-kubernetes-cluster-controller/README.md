@@ -1,6 +1,6 @@
 # spotinst-kubernetes-cluster-controller
 
-![Version: 1.0.107](https://img.shields.io/badge/Version-1.0.107-informational?style=flat-square) ![AppVersion: 1.0.87](https://img.shields.io/badge/AppVersion-1.0.87-informational?style=flat-square)
+![Version: 1.0.110](https://img.shields.io/badge/Version-1.0.110-informational?style=flat-square) ![AppVersion: 1.0.89](https://img.shields.io/badge/AppVersion-1.0.89-informational?style=flat-square)
 
 A Helm chart for Ocean Controller.
 
@@ -40,43 +40,44 @@ helm install my-release spotinst/spotinst-kubernetes-cluster-controller \
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| affinity.nodeAffinity | object | `{"preferredDuringSchedulingIgnoredDuringExecution":[{"preference":{"matchExpressions":[{"key":"node-role.kubernetes.io/master","operator":"Exists"}]},"weight":100}],"requiredDuringSchedulingIgnoredDuringExecution":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"kubernetes.io/os","operator":"NotIn","values":["windows"]}]}]}}` | (Optional) Node affinity. |
-| affinity.podAntiAffinity | object | `{"preferredDuringSchedulingIgnoredDuringExecution":[{"podAffinityTerm":{"labelSelector":{"matchExpressions":[{"key":"k8s-app","operator":"In","values":["spotinst-kubernetes-cluster-controller"]}]},"topologyKey":"kubernetes.io/hostname"},"weight":50}]}` | (Optional) Pod anti-affinity. |
-| aksConnector.acdIdentifier | string | `""` | (Optional) Unique identifier used by the Ocean AKS Connector when importing an AKS cluster. |
-| aksConnector.enabled | bool | `true` | (Optional) Controls whether the Ocean AKS Connector should be deployed (requires a valid `aksConnector.acdIdentifier`). |
-| aksConnector.image.pullPolicy | string | `"Always"` | (Optional) Image pull policy. |
-| aksConnector.image.pullSecrets | list | `[]` | (Optional) Image pull secrets. |
-| aksConnector.image.repository | string | `"spotinst/ocean-aks-connector:1.0.8"` | (Optional) Image repository. |
-| aksConnector.jobName | string | `"spotinst-kubernetes-cluster-controller-aks-connector"` | (Optional) Job name. |
-| aksConnector.nodeSelector | object | `{"kubernetes.azure.com/mode":"system"}` | (Optional) Node selection constraints. Ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector |
-| aksConnector.resources | object | `{}` | (Optional) Resource requests and limits. Ref: http://kubernetes.io/docs/user-guide/compute-resources/ |
-| aksConnector.tolerations | list | `[{"key":"CriticalAddonsOnly","operator":"Exists"}]` | (Optional) Tolerations for nodes that have taints on them. Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ |
-| caBundleSecret.name | string | `"spotinst-kubernetes-cluster-controller-ca-bundle"` | (Optional) Secret name. |
-| configMap.create | bool | `true` | (Optional) Controls whether a ConfigMap should be created. |
-| configMap.name | string | `"spotinst-kubernetes-cluster-controller-config"` | (Optional) ConfigMap name. |
-| dnsConfig | object | `{}` | (Optional) DNS config. Ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/ |
-| dnsPolicy | string | `"Default"` | (Optional) DNS policy. Ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy |
-| image.pullPolicy | string | `"Always"` | (Optional) Image pull policy. |
-| image.pullSecrets | list | `[]` | (Optional) Image pull secrets. |
-| image.repository | string | `"gcr.io/spotinst-artifacts/kubernetes-cluster-controller"` | (Optional) Image repository. |
-| metrics-server.args | list | `["--logtostderr"]` | (Optional) Arguments to pass to metrics-server on start up. |
-| metrics-server.deployChart | bool | `true` | (Optional) Specifies whether the metrics-server chart should be deployed. |
-| namespace | string | `"kube-system"` | (Optional) Default namespace. |
-| replicas | int | `1` | (Optional) configure the amount of replicas for the controller |
-| resources | object | `{}` | (Optional) Resource requests and limits. Ref: http://kubernetes.io/docs/user-guide/compute-resources/ |
-| secret.create | bool | `true` | (Optional) Controls whether a Secret should be created. |
-| secret.enabled | bool | `false` | (Optional) Use a Secret instead of a ConfigMap to store credentials. Disabled for backward compatibility. |
-| secret.name | string | `"spotinst-kubernetes-cluster-controller"` | (Optional) Secret name. |
-| serviceAccount.create | bool | `true` | (Optional) Controls whether a ServiceAccount should be created. |
-| serviceAccount.name | string | `"spotinst-kubernetes-cluster-controller"` | (Optional) Service account name. |
-| spotinst.account | string | `""` | (Required) Spot Account. Ref: https://docs.spot.io/administration/organizations?id=account |
-| spotinst.baseUrl | string | `""` | (Optional) Base URL. |
-| spotinst.clusterIdentifier | string | `""` | (Required) Unique identifier used by the Ocean Controller to connect between the Ocean backend and the Kubernetes cluster. Ref: https://docs.spot.io/ocean/tutorials/spot-kubernetes-controller/ |
-| spotinst.disableAutoUpdate | bool | `false` | (Optional) Disable auto update. |
-| spotinst.enableCsrApproval | bool | `false` | (Optional) Enable CSR approval. |
-| spotinst.proxyUrl | string | `""` | (Optional) Proxy URL. |
-| spotinst.token | string | `""` | (Required) Spot Token. Ref: https://docs.spot.io/administration/api/create-api-token |
-| tolerations | list | `[{"effect":"NoExecute","key":"node.kubernetes.io/not-ready","operator":"Exists","tolerationSeconds":150},{"effect":"NoExecute","key":"node.kubernetes.io/unreachable","operator":"Exists","tolerationSeconds":150},{"key":"node-role.kubernetes.io/master","operator":"Exists"},{"key":"node-role.kubernetes.io/control-plane","operator":"Exists"}]` | (Optional) Tolerations for nodes that have taints on them. Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ |
+| affinity.nodeAffinity | object | `{"preferredDuringSchedulingIgnoredDuringExecution":[{"preference":{"matchExpressions":[{"key":"node-role.kubernetes.io/master","operator":"Exists"}]},"weight":100}],"requiredDuringSchedulingIgnoredDuringExecution":{"nodeSelectorTerms":[{"matchExpressions":[{"key":"kubernetes.io/os","operator":"NotIn","values":["windows"]}]}]}}` | Node affinity. (Optional) |
+| affinity.podAntiAffinity | object | `{"preferredDuringSchedulingIgnoredDuringExecution":[{"podAffinityTerm":{"labelSelector":{"matchExpressions":[{"key":"k8s-app","operator":"In","values":["spotinst-kubernetes-cluster-controller"]}]},"topologyKey":"kubernetes.io/hostname"},"weight":50}]}` | Pod anti-affinity. (Optional) |
+| aksConnector.acdIdentifier | string | `""` | Unique identifier used by the Ocean AKS Connector when (Optional) importing an AKS cluster. |
+| aksConnector.enabled | bool | `true` | Controls whether the Ocean AKS Connector should be deployed (Optional) (requires a valid `aksConnector.acdIdentifier`). |
+| aksConnector.image.pullPolicy | string | `"Always"` | Image pull policy. (Optional) |
+| aksConnector.image.pullSecrets | list | `[]` | Image pull secrets. (Optional) |
+| aksConnector.image.repository | string | `"spotinst/ocean-aks-connector:1.0.8"` | Image repository. (Optional) |
+| aksConnector.jobName | string | `"spotinst-kubernetes-cluster-controller-aks-connector"` | Job name. (Optional) |
+| aksConnector.nodeSelector | object | `{"kubernetes.azure.com/mode":"system"}` | Node selection constraints. (Optional) Ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector |
+| aksConnector.resources | object | `{}` | Resource requests and limits. (Optional) Ref: http://kubernetes.io/docs/user-guide/compute-resources/ |
+| aksConnector.tolerations | list | `[{"key":"CriticalAddonsOnly","operator":"Exists"}]` | Tolerations for nodes that have taints on them. (Optional) Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ |
+| caBundleSecret.name | string | `"spotinst-kubernetes-cluster-controller-ca-bundle"` | Secret name. (Optional) |
+| configMap.create | bool | `true` | Controls whether a ConfigMap should be created. (Optional) |
+| configMap.name | string | `"spotinst-kubernetes-cluster-controller-config"` | ConfigMap name. (Optional) |
+| deploymentAnnotations | object | `{}` | Annotations for ocean-controller deployment (Optional) |
+| dnsConfig | object | `{}` | DNS config. (Optional) Ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/ |
+| dnsPolicy | string | `"Default"` | DNS policy. (Optional) Ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy |
+| image.pullPolicy | string | `"Always"` | Image pull policy. (Optional) |
+| image.pullSecrets | list | `[]` | Image pull secrets. (Optional) |
+| image.repository | string | `"gcr.io/spotinst-artifacts/kubernetes-cluster-controller"` | Image repository. (Optional) |
+| metrics-server.args | list | `["--logtostderr"]` | Arguments to pass to metrics-server on start up. (Optional) |
+| metrics-server.deployChart | bool | `true` | Specifies whether the metrics-server chart should be deployed. (Optional) |
+| namespace | string | `"kube-system"` | Default namespace. (Optional) |
+| replicas | int | `1` | configure the amount of replicas for the controller (Optional) |
+| resources | object | `{}` | Resource requests and limits. (Optional) Ref: http://kubernetes.io/docs/user-guide/compute-resources/ |
+| secret.create | bool | `true` | Controls whether a Secret should be created. (Optional) |
+| secret.enabled | bool | `false` | Use a Secret instead of a ConfigMap to store credentials. Disabled for backward compatibility. (Optional) |
+| secret.name | string | `"spotinst-kubernetes-cluster-controller"` | Secret name. (Optional) |
+| serviceAccount.create | bool | `true` | Controls whether a ServiceAccount should be created. (Optional) |
+| serviceAccount.name | string | `"spotinst-kubernetes-cluster-controller"` | Service account name. (Optional) |
+| spotinst.account | string | `""` | Spot Account. (Required) Ref: https://docs.spot.io/administration/organizations?id=account |
+| spotinst.baseUrl | string | `""` | Base URL. (Optional) |
+| spotinst.clusterIdentifier | string | `""` | Unique identifier used by the Ocean Controller to connect (Required) between the Ocean backend and the Kubernetes cluster. Ref: https://docs.spot.io/ocean/tutorials/spot-kubernetes-controller/ |
+| spotinst.disableAutoUpdate | bool | `false` | Disable auto update. (Optional) |
+| spotinst.enableCsrApproval | bool | `false` | Enable CSR approval. (Optional) |
+| spotinst.proxyUrl | string | `""` | Proxy URL. (Optional) |
+| spotinst.token | string | `""` | Spot Token. (Required) Ref: https://docs.spot.io/administration/api/create-api-token |
+| tolerations | list | `[{"effect":"NoExecute","key":"node.kubernetes.io/not-ready","operator":"Exists","tolerationSeconds":150},{"effect":"NoExecute","key":"node.kubernetes.io/unreachable","operator":"Exists","tolerationSeconds":150},{"key":"node-role.kubernetes.io/master","operator":"Exists"},{"key":"node-role.kubernetes.io/control-plane","operator":"Exists"}]` | Tolerations for nodes that have taints on them. (Optional) Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ |
 
 ## Documentation
 
@@ -100,4 +101,4 @@ We use GitHub issues for tracking bugs and feature requests. Please use these co
 Code is licensed under the [Apache License 2.0](https://github.com/spotinst/spotinst-kubernetes-helm-charts/blob/master/LICENSE/).
 
 ----------------------------------------------
-Autogenerated from chart metadata using [helm-docs v1.7.0](https://github.com/norwoodj/helm-docs/releases/v1.7.0)
+Autogenerated from chart metadata using [helm-docs v1.11.0](https://github.com/norwoodj/helm-docs/releases/v1.11.0)

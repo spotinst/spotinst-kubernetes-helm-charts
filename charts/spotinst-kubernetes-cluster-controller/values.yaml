@@ -1,63 +1,65 @@
-# -- (Optional) Default namespace.
+# -- Default namespace. (Optional)
 namespace: kube-system
 
-# -- (Optional) configure the amount of replicas for the controller
+# -- configure the amount of replicas for the controller (Optional)
 replicas: 1
+# -- Annotations for ocean-controller deployment (Optional)
+deploymentAnnotations: {}
 
 # Configuration.
 spotinst:
-  # -- (Required) Spot Token.
+  # -- Spot Token. (Required)
   # Ref: https://docs.spot.io/administration/api/create-api-token
   token: ""
-  # -- (Required) Spot Account.
+  # -- Spot Account. (Required)
   # Ref: https://docs.spot.io/administration/organizations?id=account
   account: ""
-  # -- (Required) Unique identifier used by the Ocean Controller to connect
+  # -- Unique identifier used by the Ocean Controller to connect (Required)
   # between the Ocean backend and the Kubernetes cluster.
   # Ref: https://docs.spot.io/ocean/tutorials/spot-kubernetes-controller/
   clusterIdentifier: ""
-  # -- (Optional) Base URL.
+  # -- Base URL. (Optional)
   baseUrl: ""
-  # -- (Optional) Proxy URL.
+  # -- Proxy URL. (Optional)
   proxyUrl: ""
-  # -- (Optional) Disable auto update.
+  # -- Disable auto update. (Optional)
   disableAutoUpdate: false
-  # -- (Optional) Enable CSR approval.
+  # -- Enable CSR approval. (Optional)
   enableCsrApproval: false
 
 # Secret.
 # Ref: https://kubernetes.io/docs/concepts/configuration/secret/
 secret:
-  # -- (Optional) Use a Secret instead of a ConfigMap to store credentials. Disabled for backward compatibility.
+  # -- Use a Secret instead of a ConfigMap to store credentials. Disabled for backward compatibility. (Optional)
   enabled: false
-  # -- (Optional) Controls whether a Secret should be created.
+  # -- Controls whether a Secret should be created. (Optional)
   create: true
-  # -- (Optional) Secret name.
+  # -- Secret name. (Optional)
   name: spotinst-kubernetes-cluster-controller
 
 # CA bundle.
 # Ref: https://kubernetes.io/docs/concepts/configuration/secret/
 caBundleSecret:
-  # -- (Optional) Secret name.
+  # -- Secret name. (Optional)
   name: spotinst-kubernetes-cluster-controller-ca-bundle
 
 # Config Map.
 # Ref: https://kubernetes.io/docs/concepts/configuration/configmap/
 configMap:
-  # -- (Optional) Controls whether a ConfigMap should be created.
+  # -- Controls whether a ConfigMap should be created. (Optional)
   create: true
-  # -- (Optional) ConfigMap name.
+  # -- ConfigMap name. (Optional)
   name: spotinst-kubernetes-cluster-controller-config
 
 # Service Account.
 # Ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
 serviceAccount:
-  # -- (Optional) Controls whether a ServiceAccount should be created.
+  # -- Controls whether a ServiceAccount should be created. (Optional)
   create: true
-  # -- (Optional) Service account name.
+  # -- Service account name. (Optional)
   name: spotinst-kubernetes-cluster-controller
 
-# -- (Optional) Resource requests and limits.
+# -- Resource requests and limits. (Optional)
 # Ref: http://kubernetes.io/docs/user-guide/compute-resources/
 resources: {}
   # If you do want to specify resources, uncomment the following lines,
@@ -72,25 +74,25 @@ resources: {}
 # Image.
 # Ref: https://kubernetes.io/docs/concepts/containers/images/
 image:
-  # -- (Optional) Image repository.
+  # -- Image repository. (Optional)
   repository: gcr.io/spotinst-artifacts/kubernetes-cluster-controller
-  # -- (Optional) Image pull policy.
+  # -- Image pull policy. (Optional)
   pullPolicy: Always
-  # -- (Optional) Image pull secrets.
+  # -- Image pull secrets. (Optional)
   pullSecrets: []
 
-# -- (Optional) DNS policy.
+# -- DNS policy. (Optional)
 # Ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy
 dnsPolicy: Default
 
-# -- (Optional) DNS config.
+# -- DNS config. (Optional)
 # Ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/
 dnsConfig: {}
   # options:
   # - name: ndots
   #   value: "1"
 
-# -- (Optional) Tolerations for nodes that have taints on them.
+# -- Tolerations for nodes that have taints on them. (Optional)
 # Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
 tolerations:
 - key: node.kubernetes.io/not-ready
@@ -109,7 +111,7 @@ tolerations:
 # Pod scheduling preferences.
 # Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
 affinity:
-  # -- (Optional) Node affinity.
+  # -- Node affinity. (Optional)
   nodeAffinity:
     requiredDuringSchedulingIgnoredDuringExecution:
       nodeSelectorTerms:
@@ -124,7 +126,7 @@ affinity:
         matchExpressions:
         - key: node-role.kubernetes.io/master
           operator: Exists
-  # -- (Optional) Pod anti-affinity.
+  # -- Pod anti-affinity. (Optional)
   podAntiAffinity:
     preferredDuringSchedulingIgnoredDuringExecution:
     - weight: 50
@@ -139,15 +141,15 @@ affinity:
 
 # Ocean AKS Connector.
 aksConnector:
-  # -- (Optional) Controls whether the Ocean AKS Connector should be deployed
+  # -- Controls whether the Ocean AKS Connector should be deployed (Optional)
   # (requires a valid `aksConnector.acdIdentifier`).
   enabled: true
-  # -- (Optional) Unique identifier used by the Ocean AKS Connector when
+  # -- Unique identifier used by the Ocean AKS Connector when (Optional)
   # importing an AKS cluster.
   acdIdentifier: ""
-  # -- (Optional) Job name.
+  # -- Job name. (Optional)
   jobName: spotinst-kubernetes-cluster-controller-aks-connector
-  # -- (Optional) Resource requests and limits.
+  # -- Resource requests and limits. (Optional)
   # Ref: http://kubernetes.io/docs/user-guide/compute-resources/
   resources: {}
     # If you do want to specify resources, uncomment the following lines,
@@ -161,28 +163,28 @@ aksConnector:
   # Image.
   # Ref: https://kubernetes.io/docs/concepts/containers/images/
   image:
-    # -- (Optional) Image repository.
+    # -- Image repository. (Optional)
     repository: spotinst/ocean-aks-connector:1.0.8
-    # -- (Optional) Image pull policy.
+    # -- Image pull policy. (Optional)
     pullPolicy: Always
-    # -- (Optional) Image pull secrets.
+    # -- Image pull secrets. (Optional)
     pullSecrets: []
-  # -- (Optional) Tolerations for nodes that have taints on them.
+  # -- Tolerations for nodes that have taints on them. (Optional)
   # Ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
   tolerations:
   # Allow the connector to be rescheduled while the node is in "critical add-ons only" mode.
   - key: CriticalAddonsOnly
     operator: Exists
-  # -- (Optional) Node selection constraints.
+  # -- Node selection constraints. (Optional)
   # Ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector
   nodeSelector:
     kubernetes.azure.com/mode: system
 
 # Metrics Server configuration.
 metrics-server:
-  # -- (Optional) Specifies whether the metrics-server chart should be deployed.
+  # -- Specifies whether the metrics-server chart should be deployed. (Optional)
   deployChart: true
-  # -- (Optional) Arguments to pass to metrics-server on start up.
+  # -- Arguments to pass to metrics-server on start up. (Optional)
   args:
   - --logtostderr
   # enable this if you have self-signed certificates, see: https://github.com/kubernetes-incubator/metrics-server

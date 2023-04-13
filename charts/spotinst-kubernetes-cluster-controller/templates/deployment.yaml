@@ -6,6 +6,10 @@ metadata:
   labels:
   {{- include "ocean-controller.commonLabels" . | nindent 4 }}
   {{- include "ocean-controller.controllerLabels" . | nindent 4 }}
+  {{- with .Values.deploymentAnnotations }}
+  annotations:
+  {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   replicas: {{ .Values.replicas }}
   revisionHistoryLimit: 10
