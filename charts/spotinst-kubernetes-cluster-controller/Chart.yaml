@@ -1,7 +1,7 @@
 apiVersion: v1
 name: spotinst-kubernetes-cluster-controller
 description: A Helm chart for Ocean Controller
-version: 1.0.110
+version: 1.0.111
 appVersion: 1.0.89
 icon: https://docs.spot.io/_media/images/spot_mark.png
 keywords:
