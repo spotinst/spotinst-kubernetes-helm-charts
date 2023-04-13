@@ -1,6 +1,6 @@
 # spotinst-kubernetes-cluster-controller
 
-![Version: 1.0.110](https://img.shields.io/badge/Version-1.0.110-informational?style=flat-square) ![AppVersion: 1.0.89](https://img.shields.io/badge/AppVersion-1.0.89-informational?style=flat-square)
+![Version: 1.0.111](https://img.shields.io/badge/Version-1.0.111-informational?style=flat-square) ![AppVersion: 1.0.89](https://img.shields.io/badge/AppVersion-1.0.89-informational?style=flat-square)
 
 A Helm chart for Ocean Controller.
 
@@ -34,7 +34,7 @@ helm install my-release spotinst/spotinst-kubernetes-cluster-controller \
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://kubernetes-sigs.github.io/metrics-server | metrics-server | 3.8.2 |
+| https://kubernetes-sigs.github.io/metrics-server | metrics-server | 3.10.0 |
 
 ## Values
 
