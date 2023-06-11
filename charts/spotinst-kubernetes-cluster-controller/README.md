@@ -1,6 +1,6 @@
 # spotinst-kubernetes-cluster-controller
 
-![Version: 1.0.114](https://img.shields.io/badge/Version-1.0.114-informational?style=flat-square) ![AppVersion: 1.0.93](https://img.shields.io/badge/AppVersion-1.0.93-informational?style=flat-square)
+![Version: 1.0.115](https://img.shields.io/badge/Version-1.0.115-informational?style=flat-square) ![AppVersion: 1.0.94](https://img.shields.io/badge/AppVersion-1.0.94-informational?style=flat-square)
 
 A Helm chart for Ocean Controller.
 
