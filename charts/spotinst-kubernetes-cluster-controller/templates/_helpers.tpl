@@ -114,3 +114,36 @@ Job name (ocean-aks-connector).
 {{- define "ocean-controller.aksConnectorJobName" -}}
 {{ default (include "ocean-controller.name" .) .Values.aksConnector.jobName }}
 {{- end }}
+
+{{/*
+JVM Options
+  This currently only calculates a heapsize percent depending on the memory limit size
+*/}}
+{{- define "ocean-controller.jdk_java_options" -}}
+
+{{/* Begin MaxRAMPercentage */}}
+{{- $memoryLimit := (dig "resources" "limits" "memory" nil .Values.AsMap ) -}}
+{{- if $memoryLimit -}}
+  {{- $memory := int64 (include "memory-convert" $memoryLimit) -}}
+  
+  {{- $memPercent := 50 -}}
+  
+  {{/* 2GB+ */}}
+  {{- if (gt $memory 2147483648) -}}
+    {{- $memPercent = 80 -}}
+  
+  {{/* 1GB-2GB */}}
+  {{- else if (gt $memory 1073741824) -}}
+    {{- $memPercent = 70 -}}
+  
+  {{/* 512MB-1GB */}}
+  {{- else if (gt $memory 536870912) -}}
+    {{- $memPercent = 60 -}}
+  {{- end -}}
+  
+  {{- printf "-XX:MaxRAMPercentage=%s " (toString $memPercent) -}}
+
+{{- end -}}
+{{/* End MaxRAMPercentage */}}
+
+{{- end }}

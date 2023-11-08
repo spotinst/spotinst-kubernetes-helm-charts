@@ -120,6 +120,10 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
+        {{- with (include "ocean-controller.jdk_java_options" .) }}
+        - name: JDK_JAVA_OPTIONS
+          value: {{ quote (trim .) }}
+        {{- end }}
         {{- if .Values.resources }}
         resources: {{ toYaml .Values.resources | nindent 10 }}
         {{- end }}
