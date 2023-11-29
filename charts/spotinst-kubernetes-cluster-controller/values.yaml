@@ -6,6 +6,12 @@ replicas: 1
 # -- Annotations for ocean-controller deployment (Optional)
 deploymentAnnotations: {}
 
+# -- Additional environment variables for ocean-controller deployment (Optional)
+# Should contain `name` and `value` for each element
+deploymentEnv: []
+#  - name: envName
+#    value: envValue
+
 # Configuration.
 spotinst:
   # -- Spot Token. (Required)
