@@ -1,6 +1,6 @@
 # spotinst-kubernetes-cluster-controller
 
-![Version: 1.0.117](https://img.shields.io/badge/Version-1.0.117-informational?style=flat-square) ![AppVersion: 1.0.96](https://img.shields.io/badge/AppVersion-1.0.96-informational?style=flat-square)
+![Version: 1.0.118](https://img.shields.io/badge/Version-1.0.118-informational?style=flat-square) ![AppVersion: 1.0.96](https://img.shields.io/badge/AppVersion-1.0.96-informational?style=flat-square)
 
 A Helm chart for Ocean Controller.
 
@@ -55,6 +55,7 @@ helm install my-release spotinst/spotinst-kubernetes-cluster-controller \
 | configMap.create | bool | `true` | Controls whether a ConfigMap should be created. (Optional) |
 | configMap.name | string | `"spotinst-kubernetes-cluster-controller-config"` | ConfigMap name. (Optional) |
 | deploymentAnnotations | object | `{}` | Annotations for ocean-controller deployment (Optional) |
+| deploymentEnv | list | `[]` | Additional environment variables for ocean-controller deployment (Optional) Should contain `name` and `value` for each element |
 | dnsConfig | object | `{}` | DNS config. (Optional) Ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/ |
 | dnsPolicy | string | `"Default"` | DNS policy. (Optional) Ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy |
 | image.pullPolicy | string | `"Always"` | Image pull policy. (Optional) |
