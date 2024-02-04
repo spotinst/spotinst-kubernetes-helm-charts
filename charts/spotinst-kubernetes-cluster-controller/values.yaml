@@ -113,6 +113,8 @@ tolerations:
   operator: Exists
 - key: node-role.kubernetes.io/control-plane
   operator: Exists
+- key: CriticalAddonsOnly
+  operator: Exists
 
 # Pod scheduling preferences.
 # Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
